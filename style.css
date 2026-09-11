@@ -1,8 +1,24 @@
+/* =====================================
+   CLP Corporate Website Design System
+   Prototype Version
+===================================== */
+
+
+/* =========================
+   Global Variables
+========================= */
+
 :root {
 
     --clp-blue:#0066B3;
 
+    --clp-dark-blue:#003B70;
+
     --clp-cyan:#00A9D6;
+
+    --text:#333333;
+
+    --grey-text:#666666;
 
     --light-grey:#F5F6F7;
 
@@ -11,6 +27,11 @@
 }
 
 
+
+/* =========================
+   Global Reset
+========================= */
+
 * {
 
     box-sizing:border-box;
@@ -18,23 +39,38 @@
 }
 
 
+
 body {
 
     margin:0;
 
     font-family:
+
     Arial,
+
     Helvetica,
+
     sans-serif;
 
-    color:#333333;
+    color:var(--text);
+
+    background:white;
 
 }
+
+
+
+
+/* =========================
+   Container
+========================= */
 
 
 .container {
 
     width:1200px;
+
+    max-width:90%;
 
     margin:auto;
 
@@ -42,7 +78,12 @@ body {
 
 
 
-/* Header */
+
+
+/* =========================
+   Header
+========================= */
+
 
 header {
 
@@ -50,15 +91,13 @@ header {
 
     border-bottom:1px solid var(--border);
 
+    background:white;
+
 }
 
 
 
 .header-container {
-
-    width:1200px;
-
-    margin:auto;
 
     height:100%;
 
@@ -72,15 +111,17 @@ header {
 
 
 
+
 .logo {
 
     font-size:22px;
 
     font-weight:bold;
 
-    color:#0066B3;
+    color:var(--clp-blue);
 
 }
+
 
 
 
@@ -98,25 +139,42 @@ nav {
 
 nav a {
 
-    color:#003b70;
+    height:80px;
+
+    display:flex;
+
+    align-items:center;
+
+    position:relative;
 
     text-decoration:none;
 
+    color:var(--clp-dark-blue);
+
     font-size:15px;
 
-    padding-top:30px;
-
-    height:80px;
-
 }
 
 
 
-nav .active {
+nav a.active::after {
 
-    border-bottom:3px solid #0066B3;
+    content:"";
+
+    position:absolute;
+
+    bottom:0;
+
+    left:0;
+
+    width:100%;
+
+    height:3px;
+
+    background:var(--clp-blue);
 
 }
+
 
 
 
@@ -124,11 +182,14 @@ nav .active {
 
     display:flex;
 
-    gap:30px;
+    align-items:center;
 
-    color:#0066B3;
+    gap:25px;
+
+    color:var(--clp-blue);
 
 }
+
 
 
 .search {
@@ -139,42 +200,30 @@ nav .active {
 
 
 
-nav a {
-
-    margin:0 20px;
-
-    color:#003b70;
-
-    text-decoration:none;
-
-}
 
 
-
-.active {
-
-    border-bottom:3px solid var(--clp-blue);
-
-}
-
-
-
-
-/* Hero */
+/* =========================
+   Hero Section
+========================= */
 
 
 .hero {
 
-    padding:60px 0;
+    padding:
+
+    70px 0 80px;
 
 }
 
 
+
 .breadcrumb {
 
-    font-size:13px;
+    font-size:12px;
 
-    color:#777;
+    color:#666;
+
+    margin-bottom:35px;
 
 }
 
@@ -182,11 +231,17 @@ nav a {
 
 .hero h1 {
 
-    font-size:52px;
+    font-size:48px;
+
+    line-height:1.2;
 
     font-weight:300;
 
     color:var(--clp-blue);
+
+    margin:
+
+    0 0 30px 0;
 
 }
 
@@ -194,15 +249,55 @@ nav a {
 
 .hero p {
 
-    font-size:18px;
+    max-width:900px;
 
-    line-height:30px;
+    font-size:16px;
+
+    line-height:28px;
+
+    color:var(--text);
 
 }
 
 
 
-/* Overview */
+
+
+/* =========================
+   Section Title
+========================= */
+
+
+h2 {
+
+    font-size:36px;
+
+    font-weight:300;
+
+    color:var(--clp-blue);
+
+    margin-bottom:40px;
+
+}
+
+
+
+h3 {
+
+    font-size:20px;
+
+    font-weight:600;
+
+    color:var(--clp-dark-blue);
+
+}
+
+
+
+
+/* =========================
+   USM Overview Section
+========================= */
 
 
 .overview {
@@ -215,26 +310,15 @@ nav a {
 
 
 
-h2 {
-
-    font-size:36px;
-
-    font-weight:300;
-
-    color:var(--clp-blue);
-
-}
-
-
-
 .cards {
 
     display:grid;
 
     grid-template-columns:
+
     repeat(4,1fr);
 
-    gap:30px;
+    gap:28px;
 
 }
 
@@ -244,15 +328,21 @@ h2 {
 
     background:white;
 
-    padding:30px;
+    padding:35px 30px;
+
+    min-height:200px;
 
 }
 
 
 
-.card h3 {
+.card p {
 
-    color:#003b70;
+    font-size:15px;
+
+    line-height:26px;
+
+    color:var(--text);
 
 }
 
@@ -260,28 +350,80 @@ h2 {
 
 
 
-/* FAQ */
+/* =========================
+   FAQ Banner
+========================= */
 
 
 .faq {
 
-    margin:60px 0;
+    margin:80px 0;
 
     padding:40px;
 
-    border-left:8px solid var(--clp-cyan);
+    background:white;
+
+    border-left:
+
+    8px solid var(--clp-cyan);
 
 }
 
 
+
+.faq h2 {
+
+    margin-bottom:15px;
+
+}
+
+
+
+.faq p {
+
+    font-size:16px;
+
+    color:var(--text);
+
+}
+
+
+
+
 button {
 
-    border:1px solid var(--clp-blue);
+
+    margin-top:20px;
+
+    padding:
+
+    10px 22px;
+
 
     background:white;
 
+    border:
+
+    1px solid var(--clp-blue);
+
+
     color:var(--clp-blue);
 
-    padding:10px 20px;
+
+    border-radius:5px;
+
+
+    font-size:14px;
+
+}
+
+
+
+button:hover {
+
+
+    background:var(--clp-blue);
+
+    color:white;
 
 }
