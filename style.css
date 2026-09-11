@@ -1,40 +1,27 @@
-/* =====================================
-   CLP Corporate Website Design System
-   Prototype Version
-===================================== */
-
-
-/* =========================
-   Global Variables
-========================= */
-
 :root {
 
-    --clp-blue:#0066B3;
 
-    --clp-dark-blue:#003B70;
+--clp-blue:#0066B3;
 
-    --clp-cyan:#00A9D6;
+--clp-dark-blue:#003B70;
 
-    --text:#333333;
+--clp-cyan:#00A9D6;
 
-    --grey-text:#666666;
+--text:#333333;
 
-    --light-grey:#F5F6F7;
+--light-grey:#F5F6F7;
 
-    --border:#D9D9D9;
+--border:#D9D9D9;
+
 
 }
 
 
 
-/* =========================
-   Global Reset
-========================= */
 
 * {
 
-    box-sizing:border-box;
+box-sizing:border-box;
 
 }
 
@@ -42,37 +29,36 @@
 
 body {
 
-    margin:0;
 
-    font-family:
+margin:0;
 
-    Arial,
 
-    Helvetica,
+font-family:
 
-    sans-serif;
+Arial,
 
-    color:var(--text);
+Helvetica,
 
-    background:white;
+sans-serif;
+
+
+color:var(--text);
+
 
 }
 
 
-
-
-/* =========================
-   Container
-========================= */
 
 
 .container {
 
-    width:1200px;
 
-    max-width:90%;
+width:1200px;
 
-    margin:auto;
+max-width:90%;
+
+margin:auto;
+
 
 }
 
@@ -80,18 +66,22 @@ body {
 
 
 
-/* =========================
-   Header
-========================= */
+
+
+/* Header */
 
 
 header {
 
-    height:80px;
 
-    border-bottom:1px solid var(--border);
+height:80px;
 
-    background:white;
+
+border-bottom:1px solid var(--border);
+
+
+background:white;
+
 
 }
 
@@ -99,39 +89,55 @@ header {
 
 .header-container {
 
-    height:100%;
 
-    display:flex;
+height:100%;
 
-    align-items:center;
 
-    justify-content:space-between;
+display:flex;
+
+
+align-items:center;
+
+
+justify-content:space-between;
+
 
 }
-
 
 
 
 .logo {
 
-    font-size:22px;
 
-    font-weight:bold;
+font-size:22px;
 
-    color:var(--clp-blue);
+
+font-weight:bold;
+
+
+color:var(--clp-blue);
+
 
 }
+
 
 
 
 
 nav {
 
-    display:flex;
 
-    align-items:center;
+display:flex;
 
-    gap:35px;
+
+gap:35px;
+
+
+height:100%;
+
+
+align-items:center;
+
 
 }
 
@@ -139,19 +145,27 @@ nav {
 
 nav a {
 
-    height:80px;
 
-    display:flex;
+height:80px;
 
-    align-items:center;
 
-    position:relative;
+display:flex;
 
-    text-decoration:none;
 
-    color:var(--clp-dark-blue);
+align-items:center;
 
-    font-size:15px;
+
+text-decoration:none;
+
+
+font-size:15px;
+
+
+color:var(--clp-dark-blue);
+
+
+position:relative;
+
 
 }
 
@@ -159,34 +173,42 @@ nav a {
 
 nav a.active::after {
 
-    content:"";
 
-    position:absolute;
+content:"";
 
-    bottom:0;
 
-    left:0;
+position:absolute;
 
-    width:100%;
 
-    height:3px;
+bottom:0;
 
-    background:var(--clp-blue);
+
+height:3px;
+
+
+background:var(--clp-blue);
+
+
+width:100%;
+
 
 }
 
 
 
 
+
 .header-right {
 
-    display:flex;
 
-    align-items:center;
+display:flex;
 
-    gap:25px;
 
-    color:var(--clp-blue);
+gap:25px;
+
+
+color:var(--clp-blue);
+
 
 }
 
@@ -194,7 +216,9 @@ nav a.active::after {
 
 .search {
 
-    font-size:22px;
+
+font-size:22px;
+
 
 }
 
@@ -202,60 +226,73 @@ nav a.active::after {
 
 
 
-/* =========================
-   Hero Section
-========================= */
+
+
+/* Hero */
 
 
 .hero {
 
-    padding:
 
-    70px 0 80px;
+padding:70px 0 80px;
+
 
 }
+
 
 
 
 .breadcrumb {
 
-    font-size:12px;
 
-    color:#666;
+font-size:12px;
 
-    margin-bottom:35px;
+
+color:#666;
+
+
+margin-bottom:35px;
+
 
 }
+
 
 
 
 .hero h1 {
 
-    font-size:48px;
 
-    line-height:1.2;
+font-size:48px;
 
-    font-weight:300;
 
-    color:var(--clp-blue);
+font-weight:300;
 
-    margin:
 
-    0 0 30px 0;
+line-height:1.2;
+
+
+color:var(--clp-blue);
+
+
+margin:0 0 30px;
+
 
 }
+
 
 
 
 .hero p {
 
-    max-width:900px;
 
-    font-size:16px;
+max-width:900px;
 
-    line-height:28px;
 
-    color:var(--text);
+font-size:16px;
+
+
+line-height:28px;
+
 
 }
 
@@ -263,48 +300,40 @@ nav a.active::after {
 
 
 
-/* =========================
-   Section Title
-========================= */
-
-
-h2 {
-
-    font-size:36px;
-
-    font-weight:300;
-
-    color:var(--clp-blue);
-
-    margin-bottom:40px;
-
-}
 
 
 
-h3 {
-
-    font-size:20px;
-
-    font-weight:600;
-
-    color:var(--clp-dark-blue);
-
-}
-
-
-
-
-/* =========================
-   USM Overview Section
-========================= */
+/* Overview */
 
 
 .overview {
 
-    background:var(--light-grey);
 
-    padding:80px 0;
+background:var(--light-grey);
+
+
+padding:80px 0;
+
+
+}
+
+
+
+
+h2 {
+
+
+font-size:36px;
+
+
+font-weight:300;
+
+
+color:var(--clp-blue);
+
+
+margin-bottom:40px;
+
 
 }
 
@@ -312,25 +341,45 @@ h3 {
 
 .cards {
 
-    display:grid;
 
-    grid-template-columns:
+display:grid;
 
-    repeat(4,1fr);
 
-    gap:28px;
+grid-template-columns:repeat(4,1fr);
+
+
+gap:28px;
+
 
 }
 
 
 
+
 .card {
 
-    background:white;
 
-    padding:35px 30px;
+background:white;
 
-    min-height:200px;
+
+padding:35px;
+
+
+min-height:200px;
+
+
+}
+
+
+
+.card h3 {
+
+
+color:var(--clp-dark-blue);
+
+
+font-size:20px;
+
 
 }
 
@@ -338,11 +387,12 @@ h3 {
 
 .card p {
 
-    font-size:15px;
 
-    line-height:26px;
+font-size:15px;
 
-    color:var(--text);
+
+line-height:26px;
+
 
 }
 
@@ -350,80 +400,270 @@ h3 {
 
 
 
-/* =========================
-   FAQ Banner
-========================= */
+
+
+
+
+/* Documents */
+
+
+.documents {
+
+
+padding:80px 0;
+
+
+}
+
+
+
+.year-select {
+
+
+font-size:28px;
+
+
+margin-bottom:35px;
+
+
+color:var(--clp-dark-blue);
+
+
+}
+
+
+
+.document-row {
+
+
+display:flex;
+
+
+justify-content:space-between;
+
+
+padding:22px 0;
+
+
+border-bottom:1px solid var(--border);
+
+
+}
+
+
+
+.document-row a {
+
+
+color:var(--clp-blue);
+
+
+}
+
+
+
+
+
+
+
+
+/* Video */
+
+
+.video-section {
+
+
+background:var(--light-grey);
+
+
+padding:80px 0;
+
+
+}
+
+
+
+.video-layout {
+
+
+display:grid;
+
+
+grid-template-columns:1fr 1fr;
+
+
+gap:50px;
+
+
+align-items:center;
+
+
+}
+
+
+
+
+.video-placeholder {
+
+
+height:280px;
+
+
+background:#ddd;
+
+
+display:flex;
+
+
+align-items:center;
+
+
+justify-content:center;
+
+
+font-size:40px;
+
+
+color:white;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* Useful Links */
+
+
+.links {
+
+
+padding:80px 0;
+
+
+}
+
+
+
+.link-columns {
+
+
+display:grid;
+
+
+grid-template-columns:1fr 1fr;
+
+
+gap:60px;
+
+
+}
+
+
+
+.link-columns a {
+
+
+display:block;
+
+
+margin-bottom:20px;
+
+
+color:var(--clp-blue);
+
+
+text-decoration:none;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* FAQ */
 
 
 .faq {
 
-    margin:80px 0;
 
-    padding:40px;
+margin:60px 0;
 
-    background:white;
-
-    border-left:
-
-    8px solid var(--clp-cyan);
 
 }
 
 
 
-.faq h2 {
+.faq-box {
 
-    margin-bottom:15px;
+
+display:flex;
+
+
+align-items:center;
+
+
+gap:30px;
+
+
+padding:40px;
+
+
+background:white;
+
+
+border:1px solid #eee;
+
 
 }
 
 
 
-.faq p {
+.faq-line {
 
-    font-size:16px;
 
-    color:var(--text);
+height:120px;
+
+
+width:8px;
+
+
+background:var(--clp-cyan);
+
 
 }
 
 
 
-
-button {
-
-
-    margin-top:20px;
-
-    padding:
-
-    10px 22px;
+.faq-box button {
 
 
-    background:white;
-
-    border:
-
-    1px solid var(--clp-blue);
+margin-left:auto;
 
 
-    color:var(--clp-blue);
+padding:12px 25px;
 
 
-    border-radius:5px;
+background:white;
 
 
-    font-size:14px;
-
-}
+border:1px solid var(--clp-blue);
 
 
+color:var(--clp-blue);
 
-button:hover {
 
+border-radius:5px;
 
-    background:var(--clp-blue);
-
-    color:white;
 
 }
