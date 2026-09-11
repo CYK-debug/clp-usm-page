@@ -866,3 +866,75 @@ font-size:36px;
 
 
 }
+
+/* =====================================
+   ANNOUNCEMENTS LIST
+   CLP DOCUMENT STYLE
+===================================== */
+
+
+.announcement-list{
+width:100%;
+}
+
+
+
+.announcement-row{
+
+display:grid;
+
+grid-template-columns:120px 1fr 220px;
+
+align-items:center;
+
+min-height:65px;
+
+border-bottom:1px solid #dddddd;
+
+gap:25px;
+
+}
+
+
+
+.announcement-date{
+
+font-size:14px;
+
+color:#888888;
+
+}
+
+
+
+.announcement-title{
+
+font-size:16px;
+
+line-height:24px;
+
+color:#333333;
+
+}
+
+
+
+.announcement-download{
+
+font-size:14px;
+
+color:#0066B3;
+
+text-align:right;
+
+text-decoration:none;
+
+}
+
+
+
+.announcement-download:hover{
+
+text-decoration:underline;
+
+}
