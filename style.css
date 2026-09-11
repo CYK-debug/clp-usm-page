@@ -1,10 +1,40 @@
 /* =========================================
 
 CLP USM Prototype
-Version 7.0
+Version 7.1
 CLP General Meetings Visual Recreation
 
 ========================================= */
+
+
+/* BASIC RESET */
+
+html{
+
+font-size:16px;
+
+}
+
+
+
+*{
+
+box-sizing:border-box;
+
+}
+
+
+
+img{
+
+max-width:100%;
+
+height:auto;
+
+}
+
+
+
 
 
 :root{
@@ -25,17 +55,13 @@ CLP General Meetings Visual Recreation
 
 
 
-*{
-
-box-sizing:border-box;
-
-}
-
 
 
 body{
 
 margin:0;
+
+overflow-x:hidden;
 
 font-family:
 Arial,
@@ -50,6 +76,8 @@ background:white;
 
 
 
+
+
 a{
 
 text-decoration:none;
@@ -57,6 +85,8 @@ text-decoration:none;
 cursor:pointer;
 
 }
+
+
 
 
 
@@ -81,6 +111,10 @@ margin:auto;
 
 
 
+
+
+
+
 /* =========================================
 HEADER
 ========================================= */
@@ -93,6 +127,10 @@ height:72px;
 background:white;
 
 border-bottom:1px solid #eeeeee;
+
+display:flex;
+
+align-items:center;
 
 }
 
@@ -114,7 +152,12 @@ align-items:center;
 
 justify-content:space-between;
 
+width:100%;
+
 }
+
+
+
 
 
 
@@ -133,13 +176,18 @@ align-items:center;
 
 .clp-logo img{
 
-max-height:45px;
+height:auto;
+
+max-height:42px;
 
 width:auto;
 
 display:block;
 
 }
+
+
+
 
 
 
@@ -164,6 +212,8 @@ padding:0;
 
 
 
+
+
 .nav-item{
 
 height:72px;
@@ -178,6 +228,8 @@ position:relative;
 
 
 
+
+
 .nav-item>a{
 
 font-size:14px;
@@ -185,6 +237,8 @@ font-size:14px;
 color:var(--clp-dark);
 
 }
+
+
 
 
 
@@ -205,6 +259,10 @@ height:3px;
 background:var(--clp-blue);
 
 }
+
+
+
+
 
 
 
@@ -234,9 +292,13 @@ grid-template-columns:repeat(3,1fr);
 
 gap:40px;
 
+align-items:start;
+
 z-index:100;
 
 }
+
+
 
 
 
@@ -245,6 +307,8 @@ z-index:100;
 display:grid;
 
 }
+
+
 
 
 
@@ -257,6 +321,8 @@ color:var(--clp-dark);
 margin-bottom:20px;
 
 }
+
+
 
 
 
@@ -274,6 +340,8 @@ margin-bottom:14px;
 
 
 
+
+
 .current-page{
 
 color:var(--clp-blue)!important;
@@ -281,6 +349,9 @@ color:var(--clp-blue)!important;
 font-weight:bold;
 
 }
+
+
+
 
 
 
@@ -299,6 +370,8 @@ gap:25px;
 
 
 
+
+
 .search-button{
 
 border:none;
@@ -313,6 +386,8 @@ color:var(--clp-blue);
 
 
 
+
+
 .language-switcher{
 
 font-size:14px;
@@ -320,8 +395,6 @@ font-size:14px;
 color:var(--clp-blue);
 
 }
-
-
 
 /* =========================================
 HERO
@@ -338,6 +411,8 @@ padding-bottom:80px;
 
 
 
+
+
 .breadcrumb{
 
 font-size:13px;
@@ -347,6 +422,8 @@ color:#666;
 margin-bottom:30px;
 
 }
+
+
 
 
 
@@ -366,6 +443,8 @@ margin:0 0 25px;
 
 
 
+
+
 .hero p{
 
 max-width:900px;
@@ -375,6 +454,14 @@ font-size:16px;
 line-height:30px;
 
 }
+
+
+
+
+
+
+
+
 
 /* =========================================
 HIGHLIGHTS
@@ -388,6 +475,8 @@ background:var(--light-grey);
 padding:70px 0;
 
 }
+
+
 
 
 
@@ -405,6 +494,8 @@ margin-bottom:35px;
 
 
 
+
+
 .highlight-grid{
 
 display:grid;
@@ -417,6 +508,8 @@ gap:30px;
 
 
 
+
+
 .highlight-card{
 
 background:white;
@@ -424,6 +517,8 @@ background:white;
 min-height:340px;
 
 }
+
+
 
 
 
@@ -447,6 +542,8 @@ color:#777;
 
 
 
+
+
 .highlight-card h3{
 
 font-size:18px;
@@ -463,6 +560,8 @@ margin:0;
 
 
 
+
+
 .highlight-card p{
 
 font-size:14px;
@@ -474,6 +573,8 @@ padding:0 30px;
 margin-bottom:20px;
 
 }
+
+
 
 
 
@@ -495,6 +596,8 @@ color:var(--clp-blue);
 
 
 
+
+
 /* =========================================
 ANNOUNCEMENTS
 CLP DOCUMENT LIST STYLE
@@ -506,6 +609,8 @@ CLP DOCUMENT LIST STYLE
 padding:70px 0;
 
 }
+
+
 
 
 
@@ -523,6 +628,8 @@ margin-bottom:35px;
 
 
 
+
+
 .announcement-list{
 
 width:100%;
@@ -531,21 +638,25 @@ width:100%;
 
 
 
+
+
 .announcement-row{
 
 display:grid;
 
-grid-template-columns:120px 1fr 200px;
+grid-template-columns:130px minmax(0,1fr) 180px;
 
 align-items:center;
 
-min-height:65px;
+min-height:70px;
 
 border-bottom:1px solid var(--border);
 
-gap:25px;
+gap:30px;
 
 }
+
+
 
 
 
@@ -561,17 +672,21 @@ white-space:nowrap;
 
 
 
+
+
 .announcement-title{
 
-font-size:15px;
+font-size:16px;
 
-line-height:24px;
+line-height:26px;
 
 color:#333;
 
-max-width:750px;
+word-break:normal;
 
 }
+
+
 
 
 
@@ -589,11 +704,15 @@ white-space:nowrap;
 
 
 
+
+
 .announcement-download:hover{
 
 text-decoration:underline;
 
 }
+
+
 
 
 
@@ -616,6 +735,8 @@ padding:70px 0;
 
 
 
+
+
 .video-layout{
 
 display:grid;
@@ -627,6 +748,8 @@ gap:50px;
 align-items:center;
 
 }
+
+
 
 
 
@@ -652,6 +775,8 @@ color:white;
 
 
 
+
+
 /* =========================================
 USEFUL LINKS
 ========================================= */
@@ -662,6 +787,8 @@ USEFUL LINKS
 padding:70px 0;
 
 }
+
+
 
 
 
@@ -679,6 +806,8 @@ margin-bottom:30px;
 
 
 
+
+
 .link-grid{
 
 display:grid;
@@ -691,17 +820,21 @@ gap:60px;
 
 
 
+
+
 .link-grid a{
 
 display:block;
 
 margin-bottom:18px;
 
-color:var(--clp-blue);
-
 font-size:14px;
 
+color:var(--clp-blue);
+
 }
+
+
 
 
 
@@ -719,6 +852,8 @@ FAQ CTA
 padding:40px 0 80px;
 
 }
+
+
 
 
 
@@ -740,6 +875,8 @@ padding:40px;
 
 
 
+
+
 .faq-line{
 
 height:100px;
@@ -752,6 +889,8 @@ background:var(--clp-cyan);
 
 
 
+
+
 .faq-box h2{
 
 font-size:32px;
@@ -761,6 +900,8 @@ font-weight:300;
 color:var(--clp-blue);
 
 }
+
+
 
 
 
@@ -784,6 +925,8 @@ padding:10px 25px;
 
 
 
+
+
 /* =========================================
 MOBILE
 ========================================= */
@@ -794,6 +937,9 @@ MOBILE
 display:none;
 
 }
+
+
+
 
 
 
@@ -811,6 +957,8 @@ padding-right:20px;
 
 
 
+
+
 .clp-navigation{
 
 display:none;
@@ -819,11 +967,15 @@ display:none;
 
 
 
+
+
 .mobile-menu-button{
 
 display:block;
 
 }
+
+
 
 
 
@@ -837,11 +989,15 @@ grid-template-columns:1fr;
 
 
 
+
+
 .hero h1{
 
 font-size:36px;
 
 }
+
+
 
 
 
@@ -857,11 +1013,15 @@ padding:20px 0;
 
 
 
+
+
 .announcement-download{
 
 text-align:left;
 
 }
+
+
 
 
 
