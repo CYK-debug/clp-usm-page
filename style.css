@@ -133,24 +133,24 @@ justify-content:space-between;
 
 /* LOGO */
 
+.clp-logo{
 
-.logo-text{
+display:flex;
 
-font-size:30px;
+align-items:center;
 
-font-weight:600;
-
-color:var(--clp-blue);
+width:220px;
 
 }
 
 
+.clp-logo img{
 
+width:220px;
 
+height:auto;
 
-.clp-logo{
-
-width:160px;
+display:block;
 
 }
 
