@@ -1,7 +1,7 @@
 /* =========================================
 
 CLP USM Prototype
-Version 6
+Version 6.1
 CLP General Meetings Visual Recreation
 
 ========================================= */
@@ -26,11 +26,15 @@ CLP General Meetings Visual Recreation
 
 
 
+
+
 *{
 
 box-sizing:border-box;
 
 }
+
+
 
 
 
@@ -51,6 +55,8 @@ background:white;
 
 
 
+
+
 a{
 
 text-decoration:none;
@@ -58,6 +64,8 @@ text-decoration:none;
 cursor:pointer;
 
 }
+
+
 
 
 
@@ -109,6 +117,8 @@ border-bottom:1px solid #ddd;
 
 
 
+
+
 .clp-header-container{
 
 height:90px;
@@ -131,6 +141,8 @@ justify-content:space-between;
 
 
 
+
+
 /* LOGO */
 
 .clp-logo{
@@ -139,14 +151,15 @@ display:flex;
 
 align-items:center;
 
-width:220px;
+width:200px;
 
 }
 
 
+
 .clp-logo img{
 
-width:220px;
+width:200px;
 
 height:auto;
 
@@ -181,6 +194,8 @@ padding:0;
 
 
 
+
+
 .nav-item{
 
 height:90px;
@@ -195,6 +210,8 @@ position:relative;
 
 
 
+
+
 .nav-item>a{
 
 font-size:14px;
@@ -202,6 +219,8 @@ font-size:14px;
 color:var(--clp-dark);
 
 }
+
+
 
 
 
@@ -223,7 +242,6 @@ height:3px;
 background:var(--clp-blue);
 
 }
-
 
 
 
@@ -262,11 +280,16 @@ z-index:100;
 }
 
 
+
+
+
 .nav-item:hover .mega-menu{
 
 display:grid;
 
 }
+
+
 
 
 
@@ -279,6 +302,8 @@ color:var(--clp-dark);
 margin-bottom:20px;
 
 }
+
+
 
 
 
@@ -296,6 +321,8 @@ margin-bottom:14px;
 
 
 
+
+
 .current-page{
 
 color:var(--clp-blue)!important;
@@ -309,7 +336,8 @@ font-weight:bold;
 
 
 
-/* Header tools */
+
+/* Header Tools */
 
 
 .clp-header-tools{
@@ -321,6 +349,9 @@ align-items:center;
 gap:25px;
 
 }
+
+
+
 
 
 .search-button{
@@ -337,6 +368,8 @@ color:var(--clp-blue);
 
 
 
+
+
 .language-switcher{
 
 font-size:14px;
@@ -344,6 +377,7 @@ font-size:14px;
 color:var(--clp-blue);
 
 }
+
 
 
 
@@ -369,6 +403,8 @@ padding-bottom:90px;
 
 
 
+
+
 .breadcrumb{
 
 font-size:13px;
@@ -378,6 +414,8 @@ color:#666;
 margin-bottom:35px;
 
 }
+
+
 
 
 
@@ -394,6 +432,8 @@ color:var(--clp-blue);
 margin:0 0 30px;
 
 }
+
+
 
 
 
@@ -419,8 +459,6 @@ line-height:30px;
 
 HIGHLIGHTS
 
-CLP 3 CARD STYLE
-
 ========================================= */
 
 
@@ -431,6 +469,8 @@ background:var(--light-grey);
 padding:80px 0;
 
 }
+
+
 
 
 
@@ -448,6 +488,8 @@ margin-bottom:40px;
 
 
 
+
+
 .highlight-grid{
 
 display:grid;
@@ -457,6 +499,8 @@ grid-template-columns:repeat(3,1fr);
 gap:30px;
 
 }
+
+
 
 
 
@@ -470,23 +514,27 @@ min-height:360px;
 
 
 
+
+
 .image-placeholder{
 
-height:180px;
+height:200px;
 
 background:#e6e6e6;
 
 display:flex;
 
-justify-content:center;
-
 align-items:center;
+
+justify-content:center;
 
 font-size:14px;
 
 color:#777;
 
 }
+
+
 
 
 
@@ -506,6 +554,8 @@ margin:0;
 
 
 
+
+
 .highlight-card p{
 
 font-size:15px;
@@ -520,17 +570,20 @@ margin-bottom:25px;
 
 
 
+
+
 .highlight-card a{
 
 display:block;
 
 padding:0 30px 30px;
 
-color:var(--clp-blue);
-
 font-size:14px;
 
+color:var(--clp-blue);
+
 }
+
 
 
 
@@ -541,9 +594,9 @@ font-size:14px;
 
 /* =========================================
 
-DOCUMENT LIST
+ANNOUNCEMENTS
 
-CLP General Meetings Style
+CLP DOCUMENT STYLE
 
 ========================================= */
 
@@ -553,6 +606,8 @@ CLP General Meetings Style
 padding:80px 0;
 
 }
+
+
 
 
 
@@ -570,57 +625,87 @@ margin-bottom:35px;
 
 
 
-.filter{
-
-margin-bottom:35px;
-
-}
 
 
 
-.filter select{
 
-border:none;
+.announcement-list{
 
-border-bottom:1px solid var(--clp-blue);
-
-font-size:16px;
-
-padding:8px 30px 8px 5px;
+width:100%;
 
 }
 
 
 
-.document-row{
 
-min-height:58px;
 
-display:flex;
+.announcement-row{
+
+display:grid;
+
+grid-template-columns:140px 1fr 180px;
 
 align-items:center;
 
-justify-content:space-between;
+min-height:75px;
 
 border-bottom:1px solid var(--border);
 
+gap:30px;
+
 }
 
 
 
-.document-row span{
+
+
+.announcement-date{
+
+font-size:14px;
+
+color:#777;
+
+white-space:nowrap;
+
+}
+
+
+
+
+
+.announcement-title{
 
 font-size:15px;
 
+line-height:24px;
+
+color:#333;
+
 }
 
 
 
-.document-row a{
+
+
+.announcement-download{
+
+font-size:14px;
 
 color:var(--clp-blue);
 
-font-size:14px;
+text-align:right;
+
+white-space:nowrap;
+
+}
+
+
+
+
+
+.announcement-download:hover{
+
+text-decoration:underline;
 
 }
 
@@ -649,6 +734,8 @@ padding:80px 0;
 
 
 
+
+
 .video-layout{
 
 display:grid;
@@ -663,6 +750,8 @@ align-items:center;
 
 
 
+
+
 .video-placeholder{
 
 height:300px;
@@ -671,13 +760,14 @@ background:#ddd;
 
 display:flex;
 
-justify-content:center;
-
 align-items:center;
+
+justify-content:center;
 
 color:white;
 
 }
+
 
 
 
@@ -701,6 +791,8 @@ padding:80px 0;
 
 
 
+
+
 .links h2{
 
 font-size:34px;
@@ -713,6 +805,8 @@ color:var(--clp-blue);
 
 
 
+
+
 .link-grid{
 
 display:grid;
@@ -722,6 +816,8 @@ grid-template-columns:1fr 1fr;
 gap:60px;
 
 }
+
+
 
 
 
@@ -758,6 +854,8 @@ padding:40px 0 90px;
 
 
 
+
+
 .faq-box{
 
 min-height:150px;
@@ -776,6 +874,8 @@ padding:40px;
 
 
 
+
+
 .faq-line{
 
 height:110px;
@@ -785,6 +885,8 @@ width:8px;
 background:var(--clp-cyan);
 
 }
+
+
 
 
 
@@ -808,6 +910,8 @@ padding:12px 28px;
 
 
 
+
+
 /* =========================================
 
 MOBILE
@@ -823,7 +927,11 @@ display:none;
 
 
 
+
+
+
 @media(max-width:900px){
+
 
 
 .container{
@@ -835,6 +943,8 @@ padding-right:20px;
 }
 
 
+
+
 .clp-navigation{
 
 display:none;
@@ -842,11 +952,14 @@ display:none;
 }
 
 
+
+
 .mobile-menu-button{
 
 display:block;
 
 }
+
 
 
 .highlight-grid,
@@ -858,6 +971,9 @@ grid-template-columns:1fr;
 }
 
 
+
+
+
 .hero h1{
 
 font-size:36px;
@@ -865,76 +981,27 @@ font-size:36px;
 }
 
 
-}
-
-/* =====================================
-   ANNOUNCEMENTS LIST
-   CLP DOCUMENT STYLE
-===================================== */
-
-
-.announcement-list{
-width:100%;
-}
-
 
 
 .announcement-row{
 
-display:grid;
+grid-template-columns:1fr;
 
-grid-template-columns:120px 1fr 220px;
+gap:10px;
 
-align-items:center;
-
-min-height:65px;
-
-border-bottom:1px solid #dddddd;
-
-gap:25px;
+padding:20px 0;
 
 }
 
-
-
-.announcement-date{
-
-font-size:14px;
-
-color:#888888;
-
-}
-
-
-
-.announcement-title{
-
-font-size:16px;
-
-line-height:24px;
-
-color:#333333;
-
-}
 
 
 
 .announcement-download{
 
-font-size:14px;
-
-color:#0066B3;
-
-text-align:right;
-
-text-decoration:none;
+text-align:left;
 
 }
 
 
-
-.announcement-download:hover{
-
-text-decoration:underline;
 
 }
