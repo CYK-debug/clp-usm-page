@@ -1,11 +1,10 @@
 /* =========================================
 
 CLP USM Prototype
-Version 6.1
+Version 7.0
 CLP General Meetings Visual Recreation
 
 ========================================= */
-
 
 
 :root{
@@ -26,15 +25,11 @@ CLP General Meetings Visual Recreation
 
 
 
-
-
 *{
 
 box-sizing:border-box;
 
 }
-
-
 
 
 
@@ -55,8 +50,6 @@ background:white;
 
 
 
-
-
 a{
 
 text-decoration:none;
@@ -67,14 +60,8 @@ cursor:pointer;
 
 
 
-
-
-
-
 /* =========================================
-
 GLOBAL CONTAINER
-
 ========================================= */
 
 
@@ -94,34 +81,26 @@ margin:auto;
 
 
 
-
-
-
-
 /* =========================================
-
 HEADER
-
 ========================================= */
 
 
 .clp-header{
 
-height:90px;
+height:72px;
 
 background:white;
 
-border-bottom:1px solid #ddd;
+border-bottom:1px solid #eeeeee;
 
 }
 
 
 
-
-
 .clp-header-container{
 
-height:90px;
+height:72px;
 
 max-width:1280px;
 
@@ -139,11 +118,8 @@ justify-content:space-between;
 
 
 
-
-
-
-
 /* LOGO */
+
 
 .clp-logo{
 
@@ -151,17 +127,15 @@ display:flex;
 
 align-items:center;
 
-width:200px;
-
 }
 
 
 
 .clp-logo img{
 
-width:200px;
+max-height:45px;
 
-height:auto;
+width:auto;
 
 display:block;
 
@@ -169,11 +143,7 @@ display:block;
 
 
 
-
-
-
-
-/* Navigation */
+/* NAVIGATION */
 
 
 .clp-navigation ul{
@@ -194,11 +164,9 @@ padding:0;
 
 
 
-
-
 .nav-item{
 
-height:90px;
+height:72px;
 
 display:flex;
 
@@ -210,8 +178,6 @@ position:relative;
 
 
 
-
-
 .nav-item>a{
 
 font-size:14px;
@@ -219,9 +185,6 @@ font-size:14px;
 color:var(--clp-dark);
 
 }
-
-
-
 
 
 
@@ -245,11 +208,7 @@ background:var(--clp-blue);
 
 
 
-
-
-
-
-/* Mega Menu */
+/* MEGA MENU */
 
 
 .mega-menu{
@@ -258,7 +217,7 @@ display:none;
 
 position:absolute;
 
-top:90px;
+top:72px;
 
 left:-350px;
 
@@ -281,15 +240,11 @@ z-index:100;
 
 
 
-
-
 .nav-item:hover .mega-menu{
 
 display:grid;
 
 }
-
-
 
 
 
@@ -302,8 +257,6 @@ color:var(--clp-dark);
 margin-bottom:20px;
 
 }
-
-
 
 
 
@@ -321,8 +274,6 @@ margin-bottom:14px;
 
 
 
-
-
 .current-page{
 
 color:var(--clp-blue)!important;
@@ -333,11 +284,7 @@ font-weight:bold;
 
 
 
-
-
-
-
-/* Header Tools */
+/* HEADER TOOLS */
 
 
 .clp-header-tools{
@@ -349,8 +296,6 @@ align-items:center;
 gap:25px;
 
 }
-
-
 
 
 
@@ -368,8 +313,6 @@ color:var(--clp-blue);
 
 
 
-
-
 .language-switcher{
 
 font-size:14px;
@@ -380,28 +323,18 @@ color:var(--clp-blue);
 
 
 
-
-
-
-
-
-
 /* =========================================
-
 HERO
-
 ========================================= */
 
 
 .hero{
 
-padding-top:70px;
+padding-top:60px;
 
-padding-bottom:90px;
+padding-bottom:80px;
 
 }
-
-
 
 
 
@@ -411,17 +344,15 @@ font-size:13px;
 
 color:#666;
 
-margin-bottom:35px;
+margin-bottom:30px;
 
 }
 
 
 
-
-
 .hero h1{
 
-font-size:48px;
+font-size:42px;
 
 font-weight:300;
 
@@ -429,11 +360,9 @@ line-height:1.2;
 
 color:var(--clp-blue);
 
-margin:0 0 30px;
+margin:0 0 25px;
 
 }
-
-
 
 
 
@@ -447,18 +376,8 @@ line-height:30px;
 
 }
 
-
-
-
-
-
-
-
-
 /* =========================================
-
 HIGHLIGHTS
-
 ========================================= */
 
 
@@ -466,27 +385,23 @@ HIGHLIGHTS
 
 background:var(--light-grey);
 
-padding:80px 0;
+padding:70px 0;
 
 }
-
-
 
 
 
 .highlights h2{
 
-font-size:36px;
+font-size:32px;
 
 font-weight:300;
 
 color:var(--clp-blue);
 
-margin-bottom:40px;
+margin-bottom:35px;
 
 }
-
-
 
 
 
@@ -502,23 +417,19 @@ gap:30px;
 
 
 
-
-
 .highlight-card{
 
 background:white;
 
-min-height:360px;
+min-height:340px;
 
 }
 
 
 
-
-
 .image-placeholder{
 
-height:200px;
+height:180px;
 
 background:#e6e6e6;
 
@@ -536,13 +447,11 @@ color:#777;
 
 
 
-
-
 .highlight-card h3{
 
-font-size:20px;
+font-size:18px;
 
-font-weight:500;
+font-weight:600;
 
 color:var(--clp-dark);
 
@@ -554,21 +463,17 @@ margin:0;
 
 
 
-
-
 .highlight-card p{
 
-font-size:15px;
+font-size:14px;
 
-line-height:25px;
+line-height:24px;
 
 padding:0 30px;
 
-margin-bottom:25px;
+margin-bottom:20px;
 
 }
-
-
 
 
 
@@ -590,30 +495,23 @@ color:var(--clp-blue);
 
 
 
-
-
 /* =========================================
-
 ANNOUNCEMENTS
-
-CLP DOCUMENT STYLE
-
+CLP DOCUMENT LIST STYLE
 ========================================= */
 
 
 .documents{
 
-padding:80px 0;
+padding:70px 0;
 
 }
 
 
 
-
-
 .documents h2{
 
-font-size:34px;
+font-size:32px;
 
 font-weight:300;
 
@@ -625,10 +523,6 @@ margin-bottom:35px;
 
 
 
-
-
-
-
 .announcement-list{
 
 width:100%;
@@ -637,25 +531,21 @@ width:100%;
 
 
 
-
-
 .announcement-row{
 
 display:grid;
 
-grid-template-columns:140px 1fr 180px;
+grid-template-columns:120px 1fr 200px;
 
 align-items:center;
 
-min-height:75px;
+min-height:65px;
 
 border-bottom:1px solid var(--border);
 
-gap:30px;
+gap:25px;
 
 }
-
-
 
 
 
@@ -663,13 +553,11 @@ gap:30px;
 
 font-size:14px;
 
-color:#777;
+color:#888;
 
 white-space:nowrap;
 
 }
-
-
 
 
 
@@ -681,9 +569,9 @@ line-height:24px;
 
 color:#333;
 
+max-width:750px;
+
 }
-
-
 
 
 
@@ -701,8 +589,6 @@ white-space:nowrap;
 
 
 
-
-
 .announcement-download:hover{
 
 text-decoration:underline;
@@ -715,12 +601,8 @@ text-decoration:underline;
 
 
 
-
-
 /* =========================================
-
 VIDEO
-
 ========================================= */
 
 
@@ -728,11 +610,9 @@ VIDEO
 
 background:var(--light-grey);
 
-padding:80px 0;
+padding:70px 0;
 
 }
-
-
 
 
 
@@ -747,8 +627,6 @@ gap:50px;
 align-items:center;
 
 }
-
-
 
 
 
@@ -774,36 +652,30 @@ color:white;
 
 
 
-
-
 /* =========================================
-
 USEFUL LINKS
-
 ========================================= */
 
 
 .links{
 
-padding:80px 0;
+padding:70px 0;
 
 }
-
-
 
 
 
 .links h2{
 
-font-size:34px;
+font-size:32px;
 
 font-weight:300;
 
 color:var(--clp-blue);
 
+margin-bottom:30px;
+
 }
-
-
 
 
 
@@ -819,8 +691,6 @@ gap:60px;
 
 
 
-
-
 .link-grid a{
 
 display:block;
@@ -829,9 +699,9 @@ margin-bottom:18px;
 
 color:var(--clp-blue);
 
+font-size:14px;
+
 }
-
-
 
 
 
@@ -840,19 +710,15 @@ color:var(--clp-blue);
 
 
 /* =========================================
-
 FAQ CTA
-
 ========================================= */
 
 
 .faq{
 
-padding:40px 0 90px;
+padding:40px 0 80px;
 
 }
-
-
 
 
 
@@ -866,7 +732,7 @@ align-items:center;
 
 gap:30px;
 
-border:1px solid #eee;
+border:1px solid #eeeeee;
 
 padding:40px;
 
@@ -874,19 +740,27 @@ padding:40px;
 
 
 
-
-
 .faq-line{
 
-height:110px;
+height:100px;
 
-width:8px;
+width:6px;
 
 background:var(--clp-cyan);
 
 }
 
 
+
+.faq-box h2{
+
+font-size:32px;
+
+font-weight:300;
+
+color:var(--clp-blue);
+
+}
 
 
 
@@ -900,11 +774,9 @@ border:1px solid var(--clp-blue);
 
 color:var(--clp-blue);
 
-padding:12px 28px;
+padding:10px 25px;
 
 }
-
-
 
 
 
@@ -913,9 +785,7 @@ padding:12px 28px;
 
 
 /* =========================================
-
 MOBILE
-
 ========================================= */
 
 
@@ -924,9 +794,6 @@ MOBILE
 display:none;
 
 }
-
-
-
 
 
 
@@ -944,13 +811,11 @@ padding-right:20px;
 
 
 
-
 .clp-navigation{
 
 display:none;
 
 }
-
 
 
 
@@ -972,14 +837,11 @@ grid-template-columns:1fr;
 
 
 
-
-
 .hero h1{
 
 font-size:36px;
 
 }
-
 
 
 
@@ -995,10 +857,17 @@ padding:20px 0;
 
 
 
-
 .announcement-download{
 
 text-align:left;
+
+}
+
+
+
+.clp-logo img{
+
+max-height:35px;
 
 }
 
