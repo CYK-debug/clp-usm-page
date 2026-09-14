@@ -1,8 +1,10 @@
 /* =========================================================
    CLP USM PAGE
    DESKTOP ONLY
-   No JavaScript
-   No external fonts
+
+   - No JavaScript
+   - No external fonts
+   - Only Investor Relations has a dropdown
 ========================================================= */
 
 
@@ -53,8 +55,10 @@ button {
 ========================================================= */
 
 :root {
+
     --clp-blue: #0066b3;
     --clp-dark-blue: #003b70;
+    --clp-nav-blue: #0033a0;
     --clp-cyan: #009ad6;
 
     --text-main: #333333;
@@ -62,18 +66,28 @@ button {
     --text-light: #888888;
 
     --light-grey: #f5f6f7;
+
     --border-light: #e5e5e5;
     --border-medium: #d5d5d5;
 
     --header-height: 57px;
 
+    /*
+       Header and normal page content share
+       the same horizontal grid.
+    */
     --content-width: 1280px;
     --content-padding: 40px;
+
+    /*
+       Investor Relations dropdown
+    */
+    --dropdown-background: #d7efff;
 }
 
 
 /* =========================================================
-   3. GLOBAL CONTENT CONTAINER
+   3. GLOBAL PAGE CONTAINER
 ========================================================= */
 
 .container {
@@ -100,15 +114,14 @@ button {
 
     background: #ffffff;
 
-    border: 0;
-
     z-index: 1000;
 }
 
 
 /* =========================================================
    5. HEADER CONTAINER
-   SAME WIDTH AS PAGE CONTENT
+
+   Same horizontal alignment as normal page content.
 ========================================================= */
 
 .clp-header-container {
@@ -131,7 +144,7 @@ button {
 
 
 /* =========================================================
-   6. HEADER BOTTOM LINE
+   6. HEADER BOTTOM BLUE LINE
 ========================================================= */
 
 .clp-header-container::after {
@@ -140,13 +153,17 @@ button {
     position: absolute;
 
     /*
-       Start approximately where About begins.
-       Adjust this value only if you later change logo/nav spacing.
+       About begins approximately here.
+       40px page padding
+       + 234px logo
+       + 209px fixed space
+       = 483px
     */
-    left: 455px;
+    left: 483px;
 
     /*
-       Same right alignment as page content.
+       Exactly the same right edge
+       as normal page content.
     */
     right: var(--content-padding);
 
@@ -154,7 +171,9 @@ button {
 
     height: 1px;
 
-    background: #0033a0;
+    background: var(--clp-nav-blue);
+
+    z-index: 1;
 }
 
 
@@ -163,22 +182,26 @@ button {
 ========================================================= */
 
 .clp-logo {
+    position: relative;
+
     display: block;
 
     flex: 0 0 auto;
 
     margin: 0;
     padding: 0;
+
+    z-index: 4;
 }
 
 .clp-logo img {
+    display: block;
+
     width: 234px;
     height: auto;
 
     margin: 0;
     padding: 0;
-
-    display: block;
 }
 
 
@@ -187,24 +210,32 @@ button {
 ========================================================= */
 
 .clp-navigation {
-    position: relative;
+    /*
+       Static position is intentional.
+       It lets the Investor dropdown use
+       .clp-header-container as positioning parent.
+    */
+    position: static;
 
     flex: 0 0 auto;
 
     height: var(--header-height);
 
     /*
-       Fixed Logo → About distance
+       Fixed Logo → About distance.
+       It will not expand with browser width.
     */
     margin-left: 209px;
 
     display: flex;
     align-items: center;
+
+    z-index: 4;
 }
 
 
 /* =========================================================
-   9. NAVIGATION LIST
+   9. MAIN NAV LIST
 ========================================================= */
 
 .main-nav {
@@ -223,7 +254,7 @@ button {
 
 
 /* =========================================================
-   10. NAVIGATION ITEM
+   10. MAIN NAV ITEM
 ========================================================= */
 
 .nav-item {
@@ -237,7 +268,7 @@ button {
 
 
 /* =========================================================
-   11. NAVIGATION TEXT
+   11. MAIN NAV TEXT
 ========================================================= */
 
 .nav-item > a {
@@ -250,29 +281,31 @@ button {
 
     padding: 0;
 
-    color: #0033a0;
+    color: var(--clp-nav-blue);
 
     font-size: 12px;
     font-weight: 400;
     line-height: 1;
 
     white-space: nowrap;
+
+    z-index: 4;
 }
 
 
 /* =========================================================
-   12. NAVIGATION HOVER
+   12. MAIN NAV HOVER
 ========================================================= */
 
 .nav-item > a:hover,
 .nav-item:hover > a,
 .nav-item:focus-within > a {
-    color: #0033a0;
+    color: var(--clp-nav-blue);
 }
 
 
 /* =========================================================
-   13. ACTIVE UNDERLINE
+   13. ACTIVE / HOVER UNDERLINE
 ========================================================= */
 
 .nav-item > a::after {
@@ -287,9 +320,14 @@ button {
 
     height: 2px;
 
-    background: #0033a0;
+    background: var(--clp-nav-blue);
 
     transform: scaleX(0);
+    transform-origin: center;
+
+    transition: transform 0.15s ease;
+
+    z-index: 6;
 }
 
 .nav-item:hover > a::after,
@@ -299,13 +337,15 @@ button {
 }
 
 .nav-item.active > a {
-    color: #0033a0;
+    color: var(--clp-nav-blue);
 }
 
 
 /* =========================================================
    14. HEADER TOOLS
-   SEARCH + LANGUAGE
+   SEARCH + 中文
+
+   Right aligned with normal page content.
 ========================================================= */
 
 .clp-header-tools {
@@ -323,15 +363,17 @@ button {
     padding: 0;
 
     gap: 0;
+
+    z-index: 5;
 }
 
 
 /* =========================================================
-   15. SEARCH
+   15. SEARCH BUTTON
 ========================================================= */
 
 .search-button {
-    width: 14px;
+    width: 15px;
     height: var(--header-height);
 
     display: flex;
@@ -342,37 +384,35 @@ button {
     padding: 0;
 
     border: 0;
+    outline: 0;
 
     background: transparent;
 
-    color: #0033a0;
+    color: var(--clp-nav-blue);
 
     cursor: pointer;
 }
 
 .search-button svg {
+    display: block;
+
     width: 15px;
     height: 15px;
 }
 
-
-/* =========================================================
-   16. HEADER DIVIDER
-========================================================= */
-
-.header-tool-divider {
-    display: none;
+.search-button:hover {
+    color: var(--clp-blue);
 }
 
 
 /* =========================================================
-   17. LANGUAGE
+   16. LANGUAGE
 ========================================================= */
 
 .language-switcher {
     margin-left: 66px;
 
-    color: #0033a0;
+    color: var(--clp-nav-blue);
 
     font-size: 12px;
     font-weight: 400;
@@ -381,151 +421,142 @@ button {
     white-space: nowrap;
 }
 
+.language-switcher:hover {
+    color: var(--clp-blue);
+}
+
 
 /* =========================================================
-   18. MEGA MENU
+   17. INVESTOR RELATIONS DROPDOWN
+
+   ONLY Investor Relations has a second-level menu.
 ========================================================= */
 
-.mega-menu {
+.investor-dropdown {
     position: absolute;
 
     top: var(--header-height);
-    left: 0;
-    right: 0;
+    left: 50%;
 
-    width: 100%;
+    width: 100vw;
 
-    background: #ffffff;
-
-    border-top: 1px solid #eeeeee;
-
-    box-shadow:
-        0 10px 22px rgba(0, 0, 0, 0.10);
+    background: var(--dropdown-background);
 
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
 
-    transform: translateY(-3px);
+    transform:
+        translateX(-50%)
+        translateY(-3px);
 
     transition:
         opacity 0.15s ease,
         visibility 0.15s ease,
         transform 0.15s ease;
 
-    z-index: 999;
+    z-index: 900;
 }
 
 
 /* =========================================================
-   19. SHOW MEGA MENU
+   18. SHOW INVESTOR RELATIONS DROPDOWN
 ========================================================= */
 
-.has-mega-menu:hover > .mega-menu,
-.has-mega-menu:focus-within > .mega-menu {
+.investor-menu:hover > .investor-dropdown,
+.investor-menu:focus-within > .investor-dropdown {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
 
-    transform: translateY(0);
+    transform:
+        translateX(-50%)
+        translateY(0);
 }
 
 
 /* =========================================================
-   20. MEGA MENU INNER
+   19. DROPDOWN INNER CONTAINER
 ========================================================= */
 
-.mega-menu-inner {
+.investor-dropdown-inner {
     width: 100%;
-    max-width: 1200px;
+    max-width: 920px;
 
     margin-left: auto;
     margin-right: auto;
 
-    padding: 38px 40px 42px;
+    padding:
+        30px
+        48px
+        32px;
 
     display: grid;
 
-    align-items: start;
-}
-
-
-/* ABOUT */
-
-.mega-menu-about {
-    grid-template-columns:
-        1fr
-        1fr
-        1.35fr
-        0.75fr;
-
-    gap: 55px;
-}
-
-
-/* SUSTAINABILITY */
-
-.mega-menu-sustainability {
-    grid-template-columns:
-        0.9fr
-        1.2fr
-        1.1fr;
-
-    gap: 75px;
-}
-
-
-/* INVESTOR RELATIONS */
-
-.mega-menu-investor {
-    grid-template-columns:
-        1fr
-        1.35fr
-        1.15fr;
-
-    gap: 70px;
-}
-
-
-/* CAREERS */
-
-.mega-menu-careers {
     grid-template-columns:
         1fr
         1fr;
 
-    gap: 100px;
-
-    max-width: 980px;
-}
-
-
-/* MEDIA */
-
-.mega-menu-media {
-    grid-template-columns: 1fr;
+    align-items: stretch;
 }
 
 
 /* =========================================================
-   21. MEGA MENU COLUMN
+   20. DROPDOWN LEFT COLUMN
 ========================================================= */
 
-.mega-column {
-    min-width: 0;
+.investor-dropdown-left {
+    padding-right: 38px;
 }
 
-.mega-column h3 {
-    margin: 0 0 20px;
 
-    color: #003b70;
+/* =========================================================
+   21. DROPDOWN RIGHT COLUMN
+========================================================= */
 
-    font-size: 17px;
-    font-weight: 600;
-    line-height: 1.4;
+.investor-dropdown-right {
+    padding-left: 38px;
+
+    border-left:
+        1px solid
+        rgba(0, 70, 120, 0.18);
 }
 
-.mega-column a {
+
+/* =========================================================
+   22. INVESTOR INFORMATION GROUP
+========================================================= */
+
+.investor-information {
+    margin-top: 28px;
+}
+
+
+/* =========================================================
+   23. DROPDOWN HEADINGS
+========================================================= */
+
+.dropdown-group h3 {
+    margin:
+        0
+        0
+        20px;
+
+    padding: 0;
+
+    color: #000000;
+
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+
+/* =========================================================
+   24. DROPDOWN LINKS
+========================================================= */
+
+.dropdown-group a {
     position: relative;
 
     display: block;
@@ -533,41 +564,53 @@ button {
     width: fit-content;
     max-width: 100%;
 
-    margin-bottom: 13px;
+    margin-bottom: 17px;
 
-    color: #454545;
+    color: #111111;
 
     font-size: 14px;
     font-weight: 400;
-    line-height: 1.5;
+    line-height: 1.35;
+
+    text-decoration: none;
 }
 
-.mega-column a:hover {
-    color: #0066b3;
+.dropdown-group a:last-child {
+    margin-bottom: 0;
 }
 
-.mega-column a.current-page {
-    color: #0066b3;
-    font-weight: 600;
-}
-
-.mega-column a.current-page::before {
-    content: "";
-
-    position: absolute;
-
-    left: -14px;
-    top: 3px;
-    bottom: 3px;
-
-    width: 3px;
-
-    background: #0066b3;
+.dropdown-group a:hover {
+    color: var(--clp-blue);
 }
 
 
 /* =========================================================
-   22. MAIN
+   25. CURRENT PAGE IN DROPDOWN
+========================================================= */
+
+.dropdown-group a.current-page {
+    color: var(--clp-blue);
+
+    font-weight: 600;
+}
+
+.dropdown-group a.current-page::before {
+    content: "";
+
+    position: absolute;
+
+    left: -13px;
+    top: 2px;
+    bottom: 2px;
+
+    width: 3px;
+
+    background: var(--clp-blue);
+}
+
+
+/* =========================================================
+   26. MAIN CONTENT
 ========================================================= */
 
 main {
@@ -576,7 +619,7 @@ main {
 
 
 /* =========================================================
-   23. HERO
+   27. HERO
 ========================================================= */
 
 .hero {
@@ -588,7 +631,7 @@ main {
 
 
 /* =========================================================
-   24. BREADCRUMB
+   28. BREADCRUMB
 ========================================================= */
 
 .breadcrumb {
@@ -620,13 +663,16 @@ main {
 
 
 /* =========================================================
-   25. HERO TITLE
+   29. HERO TITLE
 ========================================================= */
 
 .hero h1 {
     max-width: 1050px;
 
-    margin: 0 0 24px;
+    margin:
+        0
+        0
+        24px;
 
     color: var(--clp-blue);
 
@@ -639,7 +685,7 @@ main {
 
 
 /* =========================================================
-   26. HERO TEXT
+   30. HERO INTRODUCTION
 ========================================================= */
 
 .hero p {
@@ -661,17 +707,23 @@ main {
 
 
 /* =========================================================
-   27. ANNOUNCEMENTS
+   31. ANNOUNCEMENTS
 ========================================================= */
 
 .documents {
-    padding: 70px 0 78px;
+    padding:
+        70px
+        0
+        78px;
 
     background: #ffffff;
 }
 
 .documents h2 {
-    margin: 0 0 34px;
+    margin:
+        0
+        0
+        34px;
 
     color: var(--clp-blue);
 
@@ -682,18 +734,20 @@ main {
 
 
 /* =========================================================
-   28. ANNOUNCEMENT LIST
+   32. ANNOUNCEMENT LIST
 ========================================================= */
 
 .announcement-list {
     width: 100%;
 
-    border-top: 1px solid var(--border-medium);
+    border-top:
+        1px solid
+        var(--border-medium);
 }
 
 
 /* =========================================================
-   29. ANNOUNCEMENT ROW
+   33. ANNOUNCEMENT ROW
 ========================================================= */
 
 .announcement-row {
@@ -710,7 +764,9 @@ main {
 
     align-items: center;
 
-    padding: 14px 0;
+    padding:
+        14px
+        0;
 
     border-bottom:
         1px solid
@@ -718,7 +774,9 @@ main {
 }
 
 
-/* DATE */
+/* =========================================================
+   34. ANNOUNCEMENT DATE
+========================================================= */
 
 .announcement-date {
     color: #888888;
@@ -730,7 +788,9 @@ main {
 }
 
 
-/* TITLE */
+/* =========================================================
+   35. ANNOUNCEMENT TITLE
+========================================================= */
 
 .announcement-title {
     color: #333333;
@@ -740,12 +800,15 @@ main {
 }
 
 
-/* DOWNLOAD */
+/* =========================================================
+   36. ANNOUNCEMENT DOWNLOAD
+========================================================= */
 
 .announcement-download {
     color: var(--clp-blue);
 
     font-size: 14px;
+    line-height: 1.4;
 
     text-align: right;
 
@@ -758,18 +821,20 @@ main {
 
 
 /* =========================================================
-   30. VIDEO SECTION
+   37. VIDEO SECTION
 ========================================================= */
 
 .video-section {
-    padding: 72px 0;
+    padding:
+        72px
+        0;
 
     background: var(--light-grey);
 }
 
 
 /* =========================================================
-   31. VIDEO LAYOUT
+   38. VIDEO LAYOUT
 ========================================================= */
 
 .video-layout {
@@ -786,7 +851,7 @@ main {
 
 
 /* =========================================================
-   32. VIDEO PLACEHOLDER
+   39. VIDEO PLACEHOLDER
 ========================================================= */
 
 .video-placeholder {
@@ -812,11 +877,14 @@ main {
 
 
 /* =========================================================
-   33. VIDEO CONTENT
+   40. VIDEO CONTENT
 ========================================================= */
 
 .video-content h2 {
-    margin: 0 0 21px;
+    margin:
+        0
+        0
+        21px;
 
     color: var(--clp-blue);
 
@@ -826,7 +894,10 @@ main {
 }
 
 .video-content p {
-    margin: 0 0 23px;
+    margin:
+        0
+        0
+        23px;
 
     color: #444444;
 
@@ -847,17 +918,23 @@ main {
 
 
 /* =========================================================
-   34. USEFUL LINKS
+   41. USEFUL LINKS
 ========================================================= */
 
 .links {
-    padding: 70px 0 72px;
+    padding:
+        70px
+        0
+        72px;
 
     background: #ffffff;
 }
 
 .links h2 {
-    margin: 0 0 32px;
+    margin:
+        0
+        0
+        32px;
 
     color: var(--clp-blue);
 
@@ -868,7 +945,7 @@ main {
 
 
 /* =========================================================
-   35. LINKS GRID
+   42. USEFUL LINKS GRID
 ========================================================= */
 
 .link-grid {
@@ -883,7 +960,7 @@ main {
 
 
 /* =========================================================
-   36. LINK STYLE
+   43. USEFUL LINK STYLE
 ========================================================= */
 
 .link-grid a {
@@ -921,18 +998,21 @@ main {
 
 
 /* =========================================================
-   37. FAQ
+   44. FAQ SECTION
 ========================================================= */
 
 .faq {
-    padding: 25px 0 82px;
+    padding:
+        25px
+        0
+        82px;
 
     background: #ffffff;
 }
 
 
 /* =========================================================
-   38. FAQ BOX
+   45. FAQ BOX
 ========================================================= */
 
 .faq-box {
@@ -947,28 +1027,33 @@ main {
         35px
         40px;
 
-    border: 1px solid #e5e5e5;
+    border:
+        1px solid
+        #e5e5e5;
 
     background: #ffffff;
 }
 
 
 /* =========================================================
-   39. FAQ ACCENT LINE
+   46. FAQ ACCENT LINE
 ========================================================= */
 
 .faq-line {
     width: 6px;
     height: 88px;
 
-    flex: 0 0 auto;
+    flex:
+        0
+        0
+        auto;
 
     background: var(--clp-cyan);
 }
 
 
 /* =========================================================
-   40. FAQ TITLE
+   47. FAQ TITLE
 ========================================================= */
 
 .faq-box h2 {
@@ -983,7 +1068,7 @@ main {
 
 
 /* =========================================================
-   41. FAQ BUTTON
+   48. FAQ BUTTON
 ========================================================= */
 
 .faq-box button {
@@ -1014,14 +1099,14 @@ main {
 }
 
 .faq-box button:hover {
-    background: var(--clp-blue;
+    background: var(--clp-blue);
 
     color: #ffffff;
 }
 
 
 /* =========================================================
-   42. FOCUS
+   49. ACCESSIBILITY FOCUS
 ========================================================= */
 
 a:focus-visible,
