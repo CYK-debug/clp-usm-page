@@ -1,1122 +1,1106 @@
-<!DOCTYPE html>
-<html lang="en">
+/* =========================================================
+   CLP USM PAGE
+   DESKTOP ONLY
+   No JavaScript
+   No external fonts
+========================================================= */
 
-<head>
-  <meta charset="utf-8">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1"
-  >
+/* =========================================================
+   1. BASIC RESET
+========================================================= */
 
-  <title>Uncertificated Securities Market (USM) | CLP Group</title>
+html {
+    font-size: 16px;
+}
 
-  <meta
-    name="description"
-    content="Information for CLP Holdings shareholders on Hong Kong's Uncertificated Securities Market regime, effective 16 November 2026."
-  >
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
 
-  <link rel="stylesheet" href="style.css">
-</head>
+body {
+    margin: 0;
+    padding: 0;
 
+    font-family: Arial, Helvetica, sans-serif;
 
-<body>
+    color: #333333;
+    background: #ffffff;
 
+    overflow-x: hidden;
+}
 
-<!-- =========================================================
-     CLP HEADER
-     DESKTOP VERSION
-========================================================= -->
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
 
-<header class="clp-header">
+a {
+    color: inherit;
+    text-decoration: none;
+}
 
-  <div class="clp-header-container">
+button {
+    font: inherit;
+}
 
 
-    <!-- =========================
-         LOGO
-    ========================== -->
+/* =========================================================
+   2. COLOURS / GLOBAL VARIABLES
+========================================================= */
 
-    <a
-      class="clp-logo"
-      href="#"
-      aria-label="CLP Group home"
-    >
-      <img
-        src="CLP_125_Logo_13-01.png"
-        alt="CLP Group — 125 years"
-      >
-    </a>
+:root {
+    --clp-blue: #0066b3;
+    --clp-dark-blue: #003b70;
+    --clp-cyan: #009ad6;
 
+    --text-main: #333333;
+    --text-secondary: #666666;
+    --text-light: #888888;
 
+    --light-grey: #f5f6f7;
+    --border-light: #e5e5e5;
+    --border-medium: #d5d5d5;
 
-    <!-- =========================
-         MAIN NAVIGATION
-    ========================== -->
+    --header-height: 92px;
 
-    <nav
-      class="clp-navigation"
-      aria-label="Main navigation"
-    >
+    --content-width: 1280px;
+    --content-padding: 40px;
+}
 
-      <ul class="main-nav">
 
+/* =========================================================
+   3. GLOBAL CONTENT CONTAINER
+========================================================= */
 
-        <!-- =================================================
-             ABOUT
-        ================================================== -->
+.container {
+    width: 100%;
+    max-width: var(--content-width);
 
-        <li class="nav-item has-mega-menu">
+    margin-left: auto;
+    margin-right: auto;
 
-          <a href="#">
-            About
-          </a>
+    padding-left: var(--content-padding);
+    padding-right: var(--content-padding);
+}
 
 
-          <div class="mega-menu">
+/* =========================================================
+   4. HEADER
+========================================================= */
 
-            <div class="mega-menu-inner mega-menu-about">
+.clp-header {
+    position: relative;
 
+    width: 100%;
+    height: var(--header-height);
 
-              <!-- COLUMN 1 -->
+    background: #ffffff;
 
-              <div class="mega-column">
+    border-bottom: 1px solid #e7e7e7;
 
-                <h3>Overview</h3>
+    z-index: 1000;
+}
 
-                <a href="#">
-                  CLP at a Glance
-                </a>
 
-                <a href="#">
-                  Our Leadership
-                </a>
+/* =========================================================
+   5. HEADER CONTAINER
+========================================================= */
 
-                <a href="#">
-                  Our Purpose
-                </a>
+.clp-header-container {
+    width: 100%;
+    max-width: 1440px;
 
-                <a href="#">
-                  Value Framework
-                </a>
+    height: var(--header-height);
 
-                <a href="#">
-                  Our History
-                </a>
+    margin-left: auto;
+    margin-right: auto;
 
-              </div>
+    padding-left: 38px;
+    padding-right: 38px;
 
+    display: flex;
+    align-items: center;
+}
 
-              <!-- COLUMN 2 -->
 
-              <div class="mega-column">
+/* =========================================================
+   6. CLP LOGO
+========================================================= */
 
-                <h3>Our Business</h3>
+.clp-logo {
+    display: flex;
+    align-items: center;
 
-                <a href="#">
-                  Our Regional Presence
-                </a>
+    flex: 0 0 auto;
 
-                <a href="#">
-                  Assets &amp; Services
-                </a>
+    margin-right: 46px;
+}
 
-                <a href="#">
-                  Innovation
-                </a>
+.clp-logo img {
+    width: 185px;
+    height: auto;
+}
 
-              </div>
 
+/* =========================================================
+   7. MAIN NAVIGATION
+========================================================= */
 
-              <!-- COLUMN 3 -->
+.clp-navigation {
+    height: 100%;
 
-              <div class="mega-column">
+    display: flex;
+    align-items: center;
 
-                <h3>Corporate Governance</h3>
+    flex: 1 1 auto;
+}
 
-                <a href="#">
-                  Our Unique Approach
-                </a>
+.main-nav {
+    height: 100%;
 
-                <a href="#">
-                  Company Articles, Codes, Policies &amp; Guidelines
-                </a>
+    display: flex;
+    align-items: center;
 
-              </div>
+    gap: 28px;
 
+    margin: 0;
+    padding: 0;
 
-              <!-- COLUMN 4 -->
+    list-style: none;
+}
 
-              <div class="mega-column">
 
-                <h3>Insight</h3>
+/* =========================================================
+   8. NAVIGATION ITEMS
+========================================================= */
 
-                <a href="#">
-                  CEO Blog
-                </a>
+.nav-item {
+    position: static;
 
-              </div>
+    height: 100%;
 
+    display: flex;
+    align-items: center;
+}
 
-            </div>
+.nav-item > a {
+    position: relative;
 
-          </div>
+    height: 100%;
 
-        </li>
+    display: flex;
+    align-items: center;
 
+    color: #333333;
 
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
 
-        <!-- =================================================
-             SUSTAINABILITY
-        ================================================== -->
+    white-space: nowrap;
 
-        <li class="nav-item has-mega-menu">
+    transition: color 0.18s ease;
+}
 
-          <a href="#">
-            Sustainability
-          </a>
+.nav-item > a:hover,
+.nav-item:hover > a,
+.nav-item:focus-within > a {
+    color: var(--clp-blue);
+}
 
 
-          <div class="mega-menu">
+/* =========================================================
+   9. NAVIGATION ACTIVE LINE
+========================================================= */
 
-            <div class="mega-menu-inner mega-menu-sustainability">
+.nav-item > a::after {
+    content: "";
 
+    position: absolute;
 
-              <!-- COLUMN 1 -->
+    left: 0;
+    right: 0;
+    bottom: 0;
 
-              <div class="mega-column">
+    height: 3px;
 
-                <h3>Overview</h3>
+    background: var(--clp-blue);
 
-                <a href="#">
-                  Sustainability Approach
-                </a>
+    transform: scaleX(0);
 
-              </div>
+    transition: transform 0.18s ease;
+}
 
+.nav-item:hover > a::after,
+.nav-item:focus-within > a::after,
+.nav-item.active > a::after {
+    transform: scaleX(1);
+}
 
-              <!-- COLUMN 2 -->
+.nav-item.active > a {
+    color: var(--clp-blue);
+}
 
-              <div class="mega-column">
 
-                <h3>Strategic Priorities</h3>
+/* =========================================================
+   10. MEGA MENU
+========================================================= */
 
-                <a href="#">
-                  Decarbonisation
-                </a>
+.mega-menu {
+    position: absolute;
 
-                <a href="#">
-                  Digitalisation
-                </a>
+    top: 100%;
+    left: 0;
+    right: 0;
 
-                <a href="#">
-                  Workforce Transformation
-                </a>
+    width: 100%;
 
-              </div>
+    background: #ffffff;
 
+    border-top: 1px solid #eeeeee;
 
-              <!-- COLUMN 3 -->
+    box-shadow:
+        0 12px 28px rgba(0, 0, 0, 0.10);
 
-              <div class="mega-column">
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
 
-                <h3>Reports &amp; ESG Ratings</h3>
+    transform: translateY(-4px);
 
-                <a href="#">
-                  Sustainability Reports
-                </a>
+    transition:
+        opacity 0.15s ease,
+        visibility 0.15s ease,
+        transform 0.15s ease;
 
-                <a href="#">
-                  ESG Ratings &amp; Awards
-                </a>
+    z-index: 999;
+}
 
-              </div>
 
+/* Show mega menu on hover */
 
-            </div>
+.has-mega-menu:hover > .mega-menu,
+.has-mega-menu:focus-within > .mega-menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
 
-          </div>
+    transform: translateY(0);
+}
 
-        </li>
 
+/* =========================================================
+   11. MEGA MENU INNER
+========================================================= */
 
+.mega-menu-inner {
+    width: 100%;
+    max-width: var(--content-width);
 
-        <!-- =================================================
-             INVESTOR RELATIONS
-             CURRENT MAIN SECTION
-        ================================================== -->
+    margin-left: auto;
+    margin-right: auto;
 
-        <li class="nav-item has-mega-menu active">
+    padding:
+        42px
+        var(--content-padding)
+        46px;
 
-          <a
-            href="#"
-            aria-current="page"
-          >
-            Investor Relations
-          </a>
+    display: grid;
 
+    align-items: start;
+}
 
-          <div class="mega-menu">
 
-            <div class="mega-menu-inner mega-menu-investor">
+/* ABOUT */
 
+.mega-menu-about {
+    grid-template-columns:
+        1fr
+        1fr
+        1.35fr
+        0.75fr;
 
-              <!-- COLUMN 1 -->
+    gap: 55px;
+}
 
-              <div class="mega-column">
 
-                <h3>
-                  Financial Reporting
-                </h3>
+/* SUSTAINABILITY */
 
-                <a href="#">
-                  Quick Facts
-                </a>
+.mega-menu-sustainability {
+    grid-template-columns:
+        0.9fr
+        1.2fr
+        1.1fr;
 
-                <a href="#">
-                  Results &amp; Presentations
-                </a>
+    gap: 75px;
+}
 
-                <a href="#">
-                  Financial Reports
-                </a>
 
-                <a href="#">
-                  Announcements &amp; Circulars
-                </a>
+/* INVESTOR RELATIONS */
 
-              </div>
+.mega-menu-investor {
+    grid-template-columns:
+        1fr
+        1.35fr
+        1.15fr;
 
+    gap: 70px;
+}
 
 
-              <!-- COLUMN 2 -->
+/* CAREERS */
 
-              <div class="mega-column">
+.mega-menu-careers {
+    grid-template-columns:
+        1fr
+        1fr;
 
-                <h3>
-                  Investor Information
-                </h3>
+    gap: 100px;
 
-                <a href="#">
-                  Share Price
-                </a>
+    max-width: 980px;
+}
 
-                <a href="#">
-                  Dividends
-                </a>
 
-                <a href="#">
-                  Financial Calendar
-                </a>
+/* MEDIA CENTRE */
 
-                <a href="#">
-                  Shareholding Structure
-                </a>
+.mega-menu-media {
+    grid-template-columns: 1fr;
+}
 
-                <a href="#">
-                  Credit Ratings
-                </a>
 
-                <a href="#">
-                  CLP Climate Action Finance Framework
-                </a>
+/* =========================================================
+   12. MEGA MENU COLUMN TITLES
+========================================================= */
 
-                <a href="#">
-                  Investor Contacts
-                </a>
+.mega-column {
+    min-width: 0;
+}
 
-                <a href="#">
-                  Past Events &amp; Conferences
-                </a>
+.mega-column h3 {
+    margin: 0 0 20px;
+    padding: 0;
 
-              </div>
+    color: var(--clp-dark-blue);
 
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.4;
+}
 
 
-              <!-- COLUMN 3 -->
+/* =========================================================
+   13. MEGA MENU LINKS
+========================================================= */
 
-              <div class="mega-column">
+.mega-column a {
+    position: relative;
 
-                <h3>
-                  Shareholder Engagement
-                </h3>
+    display: block;
 
-                <a href="#">
-                  General Meetings
-                </a>
+    width: fit-content;
+    max-width: 100%;
 
-                <a href="#">
-                  Shareholders' Visit Programme
-                </a>
+    margin-bottom: 13px;
 
-                <a href="#">
-                  Shareholder Services
-                </a>
+    color: #454545;
 
-                <a
-                  class="current-page"
-                  href="#"
-                  aria-current="page"
-                >
-                  Uncertificated Securities Market
-                </a>
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
 
-              </div>
+    transition: color 0.15s ease;
+}
 
+.mega-column a:hover {
+    color: var(--clp-blue);
+}
 
-            </div>
+.mega-column a:last-child {
+    margin-bottom: 0;
+}
 
-          </div>
 
-        </li>
+/* CURRENT PAGE */
 
+.mega-column a.current-page {
+    color: var(--clp-blue);
+    font-weight: 600;
+}
 
+.mega-column a.current-page::before {
+    content: "";
 
-        <!-- =================================================
-             CAREERS
-        ================================================== -->
+    position: absolute;
 
-        <li class="nav-item has-mega-menu">
+    left: -14px;
+    top: 3px;
+    bottom: 3px;
 
-          <a href="#">
-            Careers
-          </a>
+    width: 3px;
 
+    background: var(--clp-blue);
+}
 
-          <div class="mega-menu">
 
-            <div class="mega-menu-inner mega-menu-careers">
+/* =========================================================
+   14. HEADER TOOLS
+========================================================= */
 
+.clp-header-tools {
+    height: 100%;
 
-              <div class="mega-column">
+    display: flex;
+    align-items: center;
 
-                <h3>
-                  Working at CLP
-                </h3>
+    gap: 16px;
 
-                <a href="#">
-                  Cares for People
-                </a>
+    flex: 0 0 auto;
 
-                <a href="#">
-                  People Stories
-                </a>
+    margin-left: 32px;
+}
 
-                <a href="#">
-                  Working with Us
-                </a>
 
-              </div>
+/* SEARCH */
 
+.search-button {
+    width: 32px;
+    height: 38px;
 
-              <div class="mega-column">
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-                <h3>
-                  Opportunities
-                </h3>
+    padding: 0;
+    margin: 0;
 
-                <a href="#">
-                  Job Opportunities
-                </a>
+    border: 0;
 
-                <a href="#">
-                  Engineering Graduate Trainee Programme
-                </a>
+    background: transparent;
 
-              </div>
+    color: #444444;
 
+    cursor: pointer;
+}
 
-            </div>
+.search-button:hover {
+    color: var(--clp-blue);
+}
 
-          </div>
 
-        </li>
+/* DIVIDER */
 
+.header-tool-divider {
+    display: block;
 
+    width: 1px;
+    height: 22px;
 
-        <!-- =================================================
-             MEDIA CENTRE
-        ================================================== -->
+    background: #dddddd;
+}
 
-        <li class="nav-item has-mega-menu">
 
-          <a href="#">
-            Media Centre
-          </a>
+/* LANGUAGE */
 
+.language-switcher {
+    color: #444444;
 
-          <div class="mega-menu">
+    font-size: 14px;
 
-            <div class="mega-menu-inner mega-menu-media">
+    white-space: nowrap;
 
+    transition: color 0.15s ease;
+}
 
-              <div class="mega-column">
+.language-switcher:hover {
+    color: var(--clp-blue);
+}
 
-                <h3>
-                  Resources
-                </h3>
 
-                <a href="#">
-                  Media Releases
-                </a>
+/* =========================================================
+   15. MAIN
+========================================================= */
 
-                <a href="#">
-                  Publications
-                </a>
+main {
+    width: 100%;
+}
 
-                <a href="#">
-                  Photos &amp; Videos
-                </a>
 
-              </div>
+/* =========================================================
+   16. HERO SECTION
+========================================================= */
 
+.hero {
+    padding-top: 54px;
+    padding-bottom: 74px;
 
-            </div>
+    background: #ffffff;
+}
 
-          </div>
 
-        </li>
+/* =========================================================
+   17. BREADCRUMB
+========================================================= */
 
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
 
-      </ul>
+    gap: 9px;
 
-    </nav>
+    margin-bottom: 32px;
 
+    color: #777777;
 
+    font-size: 13px;
+    line-height: 1.5;
+}
 
-    <!-- =========================
-         HEADER TOOLS
-    ========================== -->
+.breadcrumb a {
+    color: #666666;
+}
 
-    <div class="clp-header-tools">
+.breadcrumb a:hover {
+    color: var(--clp-blue);
+}
 
+.breadcrumb span {
+    color: #888888;
+}
 
-      <!-- SEARCH -->
 
-      <button
-        class="search-button"
-        type="button"
-        aria-label="Search this site"
-      >
+/* =========================================================
+   18. HERO TITLE
+========================================================= */
 
-        <svg
-          width="21"
-          height="21"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.8"
-          aria-hidden="true"
-        >
+.hero h1 {
+    max-width: 1050px;
 
-          <circle
-            cx="10.5"
-            cy="10.5"
-            r="6.5"
-          ></circle>
+    margin: 0 0 24px;
 
-          <line
-            x1="15.5"
-            y1="15.5"
-            x2="21"
-            y2="21"
-          ></line>
+    color: var(--clp-blue);
 
-        </svg>
+    font-size: 42px;
+    font-weight: 300;
+    line-height: 1.2;
 
-      </button>
+    letter-spacing: -0.4px;
+}
 
 
+/* =========================================================
+   19. HERO TEXT
+========================================================= */
 
-      <!-- DIVIDER -->
+.hero p {
+    max-width: 930px;
 
-      <span
-        class="header-tool-divider"
-        aria-hidden="true"
-      ></span>
+    margin: 0;
 
+    color: #404040;
 
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.85;
+}
 
-      <!-- LANGUAGE -->
 
-      <a
-        class="language-switcher"
-        href="#"
-        lang="zh-Hant"
-      >
-        繁體中文
-      </a>
+/* =========================================================
+   20. HIGHLIGHTS
+========================================================= */
 
+.highlights {
+    padding: 68px 0 74px;
 
-    </div>
+    background: var(--light-grey);
+}
 
+.highlights h2 {
+    margin: 0 0 34px;
 
-  </div>
+    color: var(--clp-blue);
 
-</header>
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 1.3;
+}
 
 
+/* =========================================================
+   21. HIGHLIGHT GRID
+========================================================= */
 
+.highlight-grid {
+    display: grid;
 
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
 
-<!-- =========================================================
-     MAIN CONTENT
-========================================================= -->
+    gap: 28px;
+}
 
-<main id="main">
 
+/* =========================================================
+   22. HIGHLIGHT CARD
+========================================================= */
 
+.highlight-card {
+    min-height: 455px;
 
-<!-- =========================================================
-     HERO
-========================================================= -->
+    display: flex;
+    flex-direction: column;
 
-<section class="hero">
+    background: #ffffff;
 
-  <div class="container">
+    border: 1px solid #eeeeee;
+}
 
 
-    <!-- BREADCRUMB -->
+/* IMAGE PLACEHOLDER */
 
-    <nav
-      class="breadcrumb"
-      aria-label="Breadcrumb"
-    >
+.image-placeholder {
+    width: 100%;
+    height: 205px;
 
-      <a href="#">
-        Home
-      </a>
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-      <span>/</span>
+    background:
+        linear-gradient(
+            135deg,
+            #dfdfdf,
+            #efefef
+        );
 
-      <a href="#">
-        Investor Relations
-      </a>
+    color: #888888;
 
-      <span>/</span>
+    font-size: 13px;
+}
 
-      <a href="#">
-        Shareholder Information
-      </a>
 
-      <span>/</span>
+/* CARD TITLE */
 
-      <span>
-        Uncertificated Securities Market
-      </span>
+.highlight-card h3 {
+    margin: 0 0 11px;
 
-    </nav>
+    padding:
+        25px
+        28px
+        0;
 
+    color: var(--clp-dark-blue);
 
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.4;
+}
 
-    <h1>
-      Uncertificated Securities Market (USM)
-    </h1>
 
+/* CARD TEXT */
 
+.highlight-card p {
+    margin: 0 0 20px;
 
-    <p>
+    padding:
+        0
+        28px;
 
-      Hong Kong's Uncertificated Securities Market regime
-      takes effect on 16 November 2026.
+    color: #444444;
 
-      From that date, shareholders will be able to hold and
-      transfer legal title to shares in their own names
-      electronically, without paper share certificates.
+    font-size: 14px;
+    line-height: 1.7;
+}
 
-      Existing shareholdings move across in phases over the
-      following five years.
 
-      This page brings together our announcements,
-      shareholder guidance and key dates for the transition.
+/* CARD LINK */
 
-    </p>
+.highlight-card > a {
+    margin-top: auto;
 
+    padding:
+        0
+        28px
+        28px;
 
-  </div>
+    color: var(--clp-blue);
 
-</section>
+    font-size: 14px;
+    font-weight: 500;
+}
 
+.highlight-card > a:hover {
+    text-decoration: underline;
+}
 
 
+/* =========================================================
+   23. ANNOUNCEMENTS
+========================================================= */
 
+.documents {
+    padding: 70px 0 78px;
 
-<!-- =========================================================
-     HIGHLIGHTS
-========================================================= -->
+    background: #ffffff;
+}
 
-<section class="highlights">
+.documents h2 {
+    margin: 0 0 34px;
 
-  <div class="container">
+    color: var(--clp-blue);
 
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 1.3;
+}
 
-    <h2>
-      What this means for shareholders
-    </h2>
 
+/* =========================================================
+   24. ANNOUNCEMENT LIST
+========================================================= */
 
+.announcement-list {
+    width: 100%;
 
-    <div class="highlight-grid">
+    border-top: 1px solid var(--border-medium);
+}
 
 
-      <!-- =========================
-           CARD 1
-      ========================== -->
+/* ROW */
 
-      <div class="highlight-card">
+.announcement-row {
+    min-height: 78px;
 
-        <div class="image-placeholder">
-          Image placeholder 560 &times; 360
-        </div>
+    display: grid;
 
+    grid-template-columns:
+        130px
+        minmax(0, 1fr)
+        180px;
 
-        <h3>
-          Paper certificates are phased out
-        </h3>
+    gap: 30px;
 
+    align-items: center;
 
-        <p>
+    padding: 14px 0;
 
-          Share certificates stop being issued once our shares
-          become participating securities.
+    border-bottom:
+        1px solid
+        var(--border-light);
+}
 
-          Certificates you already hold stay valid until your
-          holding is converted, and lost certificates will no
-          longer be replaced.
 
-        </p>
+/* DATE */
 
+.announcement-date {
+    color: #888888;
 
-        <a href="#">
-          How dematerialisation works
-        </a>
+    font-size: 14px;
+    line-height: 1.5;
 
-      </div>
+    white-space: nowrap;
+}
 
 
+/* TITLE */
 
-      <!-- =========================
-           CARD 2
-      ========================== -->
+.announcement-title {
+    color: #333333;
 
-      <div class="highlight-card">
+    font-size: 15px;
+    line-height: 1.65;
+}
 
-        <div class="image-placeholder">
-          Image placeholder 560 &times; 360
-        </div>
 
+/* DOWNLOAD */
 
-        <h3>
-          Holding shares in your own name
-        </h3>
+.announcement-download {
+    color: var(--clp-blue);
 
+    font-size: 14px;
 
-        <p>
+    text-align: right;
 
-          To hold shares electronically in your own name you
-          will need a USI Facility, opened with our Approved
-          Securities Registrar.
+    white-space: nowrap;
+}
 
-          It lets you view your holding, receive entitlements
-          and transfer shares without paper.
+.announcement-download:hover {
+    text-decoration: underline;
+}
 
-        </p>
 
+/* =========================================================
+   25. VIDEO SECTION
+========================================================= */
 
-        <a href="#">
-          Opening a USI Facility
-        </a>
+.video-section {
+    padding: 72px 0;
 
-      </div>
+    background: var(--light-grey);
+}
 
 
+/* VIDEO LAYOUT */
 
-      <!-- =========================
-           CARD 3
-      ========================== -->
+.video-layout {
+    display: grid;
 
-      <div class="highlight-card">
+    grid-template-columns:
+        1.05fr
+        0.95fr;
 
-        <div class="image-placeholder">
-          Image placeholder 560 &times; 360
-        </div>
+    gap: 58px;
 
+    align-items: center;
+}
 
-        <h3>
-          Your rights are unchanged
-        </h3>
 
+/* VIDEO PLACEHOLDER */
 
-        <p>
+.video-placeholder {
+    width: 100%;
 
-          Voting, dividends and the right to attend general
-          meetings are unaffected.
+    aspect-ratio: 16 / 9;
 
-          What changes is the form your title takes and the
-          way you give instructions to the registrar.
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-        </p>
+    background:
+        linear-gradient(
+            135deg,
+            #cccccc,
+            #e3e3e3
+        );
 
+    color: #ffffff;
 
-        <a href="#">
-          Shareholder rights under USM
-        </a>
+    font-size: 14px;
+}
 
-      </div>
 
+/* VIDEO TITLE */
 
-    </div>
+.video-content h2 {
+    margin: 0 0 21px;
 
+    color: var(--clp-blue);
 
-  </div>
+    font-size: 31px;
+    font-weight: 300;
+    line-height: 1.3;
+}
 
-</section>
 
+/* VIDEO TEXT */
 
+.video-content p {
+    margin: 0 0 23px;
 
+    color: #444444;
 
+    font-size: 15px;
+    line-height: 1.8;
+}
 
-<!-- =========================================================
-     ANNOUNCEMENTS
-========================================================= -->
 
-<section class="documents">
+/* VIDEO LINK */
 
-  <div class="container">
+.video-content a {
+    color: var(--clp-blue);
 
+    font-size: 14px;
+    font-weight: 500;
+}
 
-    <h2>
-      Announcements
-    </h2>
+.video-content a:hover {
+    text-decoration: underline;
+}
 
 
+/* =========================================================
+   26. USEFUL LINKS
+========================================================= */
 
-    <div class="announcement-list">
+.links {
+    padding: 70px 0 72px;
 
+    background: #ffffff;
+}
 
-      <!-- ANNOUNCEMENT 1 -->
+.links h2 {
+    margin: 0 0 32px;
 
-      <div class="announcement-row">
+    color: var(--clp-blue);
 
-        <div class="announcement-date">
-          dd/mm/yyyy
-        </div>
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 1.3;
+}
 
-        <div class="announcement-title">
-          USM Participation Information and Transition Plan
-        </div>
 
-        <a
-          class="announcement-download"
-          href="#"
-        >
-          Download PDF (XXX KB)
-        </a>
+/* =========================================================
+   27. LINK GRID
+========================================================= */
 
-      </div>
+.link-grid {
+    display: grid;
 
+    grid-template-columns:
+        1fr
+        1fr;
 
+    gap: 80px;
+}
 
-      <!-- ANNOUNCEMENT 2 -->
 
-      <div class="announcement-row">
+/* LINK */
 
-        <div class="announcement-date">
-          dd/mm/yyyy
-        </div>
+.link-grid a {
+    position: relative;
 
-        <div class="announcement-title">
-          Notice of Implementation of the
-          Uncertificated Securities Market (USM)
-        </div>
+    display: block;
 
-        <a
-          class="announcement-download"
-          href="#"
-        >
-          Download PDF (XXX KB)
-        </a>
+    margin-bottom: 18px;
 
-      </div>
+    padding-left: 17px;
 
+    color: var(--clp-blue);
 
+    font-size: 14px;
+    line-height: 1.55;
+}
 
-      <!-- ANNOUNCEMENT 3 -->
+.link-grid a::before {
+    content: "›";
 
-      <div class="announcement-row">
+    position: absolute;
 
-        <div class="announcement-date">
-          dd/mm/yyyy
-        </div>
+    left: 0;
+    top: -1px;
 
-        <div class="announcement-title">
-          Explanatory Statement on the New Articles of Association
-        </div>
+    color: var(--clp-blue);
 
-        <a
-          class="announcement-download"
-          href="#"
-        >
-          Download PDF (XXX KB)
-        </a>
+    font-size: 18px;
+    line-height: 1.2;
+}
 
-      </div>
+.link-grid a:hover {
+    text-decoration: underline;
+}
 
 
+/* =========================================================
+   28. FAQ
+========================================================= */
 
-      <!-- ANNOUNCEMENT 4 -->
+.faq {
+    padding: 25px 0 82px;
 
-      <div class="announcement-row">
+    background: #ffffff;
+}
 
-        <div class="announcement-date">
-          dd/mm/yyyy
-        </div>
 
-        <div class="announcement-title">
+/* FAQ BOX */
 
-          Proposed New Articles of Association Subject to
-          Adoption by Shareholders at the 2026 Annual General
-          Meeting (clean version)
+.faq-box {
+    min-height: 154px;
 
-        </div>
+    display: flex;
+    align-items: center;
 
-        <a
-          class="announcement-download"
-          href="#"
-        >
-          Download PDF (XXX KB)
-        </a>
+    gap: 32px;
 
-      </div>
+    padding:
+        35px
+        40px;
 
+    border: 1px solid #e5e5e5;
 
+    background: #ffffff;
+}
 
-      <!-- ANNOUNCEMENT 5 -->
 
-      <div class="announcement-row">
+/* FAQ BLUE LINE */
 
-        <div class="announcement-date">
-          dd/mm/yyyy
-        </div>
+.faq-line {
+    width: 6px;
+    height: 88px;
 
-        <div class="announcement-title">
+    flex: 0 0 auto;
 
-          Proposed New Articles of Association Subject to
-          Adoption by Shareholders at the 2026 Annual General
-          Meeting (marked-up version)
+    background: var(--clp-cyan);
+}
 
-        </div>
 
-        <a
-          class="announcement-download"
-          href="#"
-        >
-          Download PDF (XXX KB)
-        </a>
+/* FAQ TITLE */
 
-      </div>
+.faq-box h2 {
+    margin: 0;
 
+    color: var(--clp-blue);
 
-    </div>
+    font-size: 30px;
+    font-weight: 300;
+    line-height: 1.3;
+}
 
 
-  </div>
+/* FAQ BUTTON */
 
-</section>
+.faq-box button {
+    min-width: 140px;
 
+    margin-left: auto;
 
+    padding:
+        12px
+        24px;
 
+    border:
+        1px solid
+        var(--clp-blue);
 
+    background: #ffffff;
 
-<!-- =========================================================
-     VIDEO
-========================================================= -->
+    color: var(--clp-blue);
 
-<section class="video-section">
+    font-size: 14px;
+    font-weight: 500;
 
-  <div class="container">
+    cursor: pointer;
 
+    transition:
+        background 0.15s ease,
+        color 0.15s ease;
+}
 
-    <div class="video-layout">
+.faq-box button:hover {
+    background: var(--clp-blue);
 
+    color: #ffffff;
+}
 
-      <!-- VIDEO PLACEHOLDER -->
 
-      <div class="video-placeholder">
-        Video placeholder 16:9
-      </div>
+/* =========================================================
+   29. FOCUS
+========================================================= */
 
+a:focus-visible,
+button:focus-visible {
+    outline:
+        2px solid
+        var(--clp-cyan);
 
+    outline-offset: 3px;
+}
 
-      <!-- VIDEO CONTENT -->
 
-      <div class="video-content">
-
-
-        <h2>
-          Watch: preparing for the transition
-        </h2>
-
-
-        <p>
-
-          A short walkthrough of what changes on
-          16 November 2026, when your own holding is likely
-          to be converted, and the three things worth doing
-          before then:
-
-          check your registered details, decide how you want
-          to hold your shares, and keep your certificates
-          somewhere safe until they are called in.
-
-        </p>
-
-
-        <a href="#">
-          View the full transcript
-        </a>
-
-
-      </div>
-
-
-    </div>
-
-
-  </div>
-
-</section>
-
-
-
-
-
-<!-- =========================================================
-     USEFUL LINKS
-========================================================= -->
-
-<section class="links">
-
-  <div class="container">
-
-
-    <h2>
-      Useful links
-    </h2>
-
-
-
-    <div class="link-grid">
-
-
-      <!-- LEFT COLUMN -->
-
-      <div>
-
-        <a href="#">
-          Announcements and circulars
-        </a>
-
-        <a href="#">
-          Articles of Association
-        </a>
-
-        <a href="#">
-          2026 Annual General Meeting
-        </a>
-
-        <a href="#">
-          Dividend history and payment options
-        </a>
-
-        <a href="#">
-          Contact the Share Registrar
-        </a>
-
-      </div>
-
-
-
-      <!-- RIGHT COLUMN -->
-
-      <div>
-
-        <a href="#">
-          SFC — Uncertificated Securities Market
-        </a>
-
-        <a href="#">
-          HKEX — USM information for investors
-        </a>
-
-        <a href="#">
-          Federation of Share Registrars
-        </a>
-
-        <a href="#">
-          List of Approved Securities Registrars
-        </a>
-
-        <a href="#">
-          Glossary of USM terms
-        </a>
-
-      </div>
-
-
-    </div>
-
-
-  </div>
-
-</section>
-
-
-
-
-
-<!-- =========================================================
-     FAQ
-========================================================= -->
-
-<section class="faq">
-
-  <div class="container">
-
-
-    <div class="faq-box">
-
-
-      <div
-        class="faq-line"
-        aria-hidden="true"
-      ></div>
-
-
-
-      <h2>
-        Still have questions about USM?
-      </h2>
-
-
-
-      <button type="button">
-        Read the FAQs
-      </button>
-
-
-    </div>
-
-
-  </div>
-
-</section>
-
-
-
-</main>
-
-
-</body>
-
-</html>
+/* =========================================================
+   END
+   DESKTOP VERSION ONLY
+========================================================= */
