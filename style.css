@@ -114,15 +114,15 @@ button {
     position: relative;
 
     width: 100%;
-    max-width: 1008px;
+    max-width: var(--content-width);
 
     height: 57px;
 
     margin-left: auto;
     margin-right: auto;
 
-    padding-left: 4px;
-    padding-right: 20px;
+    padding-left: var(--content-padding);
+    padding-right: var(--content-padding);
 
     display: flex;
     align-items: flex-start;
