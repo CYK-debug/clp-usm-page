@@ -90,82 +90,100 @@ button {
 
 /* =========================================================
    4. HEADER
+   CLP COMPACT DESKTOP HEADER
 ========================================================= */
 
 .clp-header {
     position: relative;
 
     width: 100%;
-    height: var(--header-height);
+    height: 57px;
 
     background: #ffffff;
 
-    border-bottom: 1px solid #e7e7e7;
+    border: 0;
 
     z-index: 1000;
 }
 
 
 /* =========================================================
-   5. HEADER CONTAINER
+   HEADER CONTAINER
 ========================================================= */
 
 .clp-header-container {
+    position: relative;
+
     width: 100%;
-    max-width: 1440px;
+    height: 57px;
 
-    height: var(--header-height);
+    margin: 0;
 
-    margin-left: auto;
-    margin-right: auto;
-
-    padding-left: 38px;
-    padding-right: 38px;
+    padding-left: 4px;
+    padding-right: 20px;
 
     display: flex;
-    align-items: center;
+    align-items: flex-start;
 }
 
 
 /* =========================================================
-   6. CLP LOGO
+   LOGO
 ========================================================= */
 
 .clp-logo {
-    display: flex;
-    align-items: center;
+    display: block;
 
     flex: 0 0 auto;
 
-    margin-right: 46px;
+    margin: 0;
+    padding: 0;
 }
 
 .clp-logo img {
-    width: 185px;
+    width: 234px;
     height: auto;
+
+    margin: 0;
+    padding: 0;
+
+    display: block;
 }
 
 
 /* =========================================================
-   7. MAIN NAVIGATION
+   MAIN NAVIGATION
 ========================================================= */
 
 .clp-navigation {
-    height: 100%;
+    position: relative;
+
+    flex: 0 0 auto;
+
+    height: 57px;
+
+    /*
+       This is the important part:
+       pushes the whole navigation group to the right.
+    */
+    margin-left: auto;
 
     display: flex;
     align-items: center;
-
-    flex: 1 1 auto;
 }
 
+
+/* =========================================================
+   NAV LIST
+========================================================= */
+
 .main-nav {
-    height: 100%;
+    height: 57px;
 
     display: flex;
     align-items: center;
 
-    gap: 28px;
+    gap: 26px;
 
     margin: 0;
     padding: 0;
@@ -175,46 +193,56 @@ button {
 
 
 /* =========================================================
-   8. NAVIGATION ITEMS
+   NAV ITEM
 ========================================================= */
 
 .nav-item {
     position: static;
 
-    height: 100%;
+    height: 57px;
 
     display: flex;
     align-items: center;
-}
-
-.nav-item > a {
-    position: relative;
-
-    height: 100%;
-
-    display: flex;
-    align-items: center;
-
-    color: #333333;
-
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1;
-
-    white-space: nowrap;
-
-    transition: color 0.18s ease;
-}
-
-.nav-item > a:hover,
-.nav-item:hover > a,
-.nav-item:focus-within > a {
-    color: var(--clp-blue);
 }
 
 
 /* =========================================================
-   9. NAVIGATION ACTIVE LINE
+   NAV TEXT
+========================================================= */
+
+.nav-item > a {
+    position: relative;
+
+    height: 57px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0;
+
+    color: #0033a0;
+
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   NAV HOVER
+========================================================= */
+
+.nav-item > a:hover,
+.nav-item:hover > a,
+.nav-item:focus-within > a {
+    color: #0033a0;
+}
+
+
+/* =========================================================
+   ACTIVE UNDERLINE
 ========================================================= */
 
 .nav-item > a::after {
@@ -224,15 +252,14 @@ button {
 
     left: 0;
     right: 0;
-    bottom: 0;
 
-    height: 3px;
+    bottom: 2px;
 
-    background: var(--clp-blue);
+    height: 2px;
+
+    background: #0033a0;
 
     transform: scaleX(0);
-
-    transition: transform 0.18s ease;
 }
 
 .nav-item:hover > a::after,
@@ -241,19 +268,140 @@ button {
     transform: scaleX(1);
 }
 
+
+/* =========================================================
+   ACTIVE NAV TEXT
+========================================================= */
+
 .nav-item.active > a {
-    color: var(--clp-blue);
+    color: #0033a0;
 }
 
 
 /* =========================================================
-   10. MEGA MENU
+   BLUE LINE UNDER RIGHT HEADER AREA
+========================================================= */
+
+.clp-navigation::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    /*
+       Extend underneath search + Chinese language selector.
+    */
+    right: -139px;
+
+    bottom: 0;
+
+    height: 1px;
+
+    background: #0033a0;
+}
+
+
+/* =========================================================
+   HEADER TOOLS
+========================================================= */
+
+.clp-header-tools {
+    height: 57px;
+
+    display: flex;
+    align-items: center;
+
+    flex: 0 0 auto;
+
+    /*
+       Media Centre → Search
+       approx 26px
+    */
+    margin-left: 26px;
+
+    padding: 0;
+
+    gap: 0;
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.search-button {
+    width: 14px;
+    height: 57px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0;
+    padding: 0;
+
+    border: 0;
+
+    background: transparent;
+
+    color: #0033a0;
+
+    cursor: pointer;
+}
+
+
+/*
+   Current SVG is 21px in HTML.
+   Force visual size down to match screenshot.
+*/
+
+.search-button svg {
+    width: 15px;
+    height: 15px;
+}
+
+
+/* =========================================================
+   REMOVE DIVIDER
+========================================================= */
+
+.header-tool-divider {
+    display: none;
+}
+
+
+/* =========================================================
+   LANGUAGE
+========================================================= */
+
+.language-switcher {
+    /*
+       Search → Chinese has a much larger gap
+       in the reference Header.
+    */
+
+    margin-left: 66px;
+
+    color: #0033a0;
+
+    font-size: 12px;
+    font-weight: 400;
+
+    line-height: 1;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   MEGA MENU
 ========================================================= */
 
 .mega-menu {
     position: absolute;
 
-    top: 100%;
+    top: 57px;
     left: 0;
     right: 0;
 
@@ -264,13 +412,13 @@ button {
     border-top: 1px solid #eeeeee;
 
     box-shadow:
-        0 12px 28px rgba(0, 0, 0, 0.10);
+        0 10px 22px rgba(0, 0, 0, 0.10);
 
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
 
-    transform: translateY(-4px);
+    transform: translateY(-3px);
 
     transition:
         opacity 0.15s ease,
@@ -281,7 +429,9 @@ button {
 }
 
 
-/* Show mega menu on hover */
+/* =========================================================
+   SHOW MEGA MENU
+========================================================= */
 
 .has-mega-menu:hover > .mega-menu,
 .has-mega-menu:focus-within > .mega-menu {
@@ -294,20 +444,18 @@ button {
 
 
 /* =========================================================
-   11. MEGA MENU INNER
+   MEGA MENU INNER
 ========================================================= */
 
 .mega-menu-inner {
     width: 100%;
-    max-width: var(--content-width);
+
+    max-width: 1200px;
 
     margin-left: auto;
     margin-right: auto;
 
-    padding:
-        42px
-        var(--content-padding)
-        46px;
+    padding: 38px 40px 42px;
 
     display: grid;
 
@@ -365,7 +513,7 @@ button {
 }
 
 
-/* MEDIA CENTRE */
+/* MEDIA */
 
 .mega-menu-media {
     grid-template-columns: 1fr;
@@ -373,18 +521,22 @@ button {
 
 
 /* =========================================================
-   12. MEGA MENU COLUMN TITLES
+   MEGA MENU COLUMN
 ========================================================= */
 
 .mega-column {
     min-width: 0;
 }
 
+
+/* =========================================================
+   MEGA MENU HEADING
+========================================================= */
+
 .mega-column h3 {
     margin: 0 0 20px;
-    padding: 0;
 
-    color: var(--clp-dark-blue);
+    color: #003b70;
 
     font-size: 17px;
     font-weight: 600;
@@ -393,7 +545,7 @@ button {
 
 
 /* =========================================================
-   13. MEGA MENU LINKS
+   MEGA MENU LINK
 ========================================================= */
 
 .mega-column a {
@@ -411,23 +563,19 @@ button {
     font-size: 14px;
     font-weight: 400;
     line-height: 1.5;
-
-    transition: color 0.15s ease;
 }
 
 .mega-column a:hover {
-    color: var(--clp-blue);
-}
-
-.mega-column a:last-child {
-    margin-bottom: 0;
+    color: #0066b3;
 }
 
 
-/* CURRENT PAGE */
+/* =========================================================
+   CURRENT PAGE
+========================================================= */
 
 .mega-column a.current-page {
-    color: var(--clp-blue);
+    color: #0066b3;
     font-weight: 600;
 }
 
@@ -442,87 +590,8 @@ button {
 
     width: 3px;
 
-    background: var(--clp-blue);
+    background: #0066b3;
 }
-
-
-/* =========================================================
-   14. HEADER TOOLS
-========================================================= */
-
-.clp-header-tools {
-    height: 100%;
-
-    display: flex;
-    align-items: center;
-
-    gap: 16px;
-
-    flex: 0 0 auto;
-
-    margin-left: 32px;
-}
-
-
-/* SEARCH */
-
-.search-button {
-    width: 32px;
-    height: 38px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 0;
-    margin: 0;
-
-    border: 0;
-
-    background: transparent;
-
-    color: #444444;
-
-    cursor: pointer;
-}
-
-.search-button:hover {
-    color: var(--clp-blue);
-}
-
-
-/* DIVIDER */
-
-.header-tool-divider {
-    display: block;
-
-    width: 1px;
-    height: 22px;
-
-    background: #dddddd;
-}
-
-
-/* LANGUAGE */
-
-.language-switcher {
-    color: #444444;
-
-    font-size: 14px;
-
-    white-space: nowrap;
-
-    transition: color 0.15s ease;
-}
-
-.language-switcher:hover {
-    color: var(--clp-blue);
-}
-
-
-/* =========================================================
-   15. MAIN
-========================================================= */
 
 main {
     width: 100%;
