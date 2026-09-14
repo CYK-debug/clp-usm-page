@@ -1,1036 +1,1122 @@
-/* =========================================
+<!DOCTYPE html>
+<html lang="en">
 
-CLP USM Prototype
-Version 7.1
-CLP General Meetings Visual Recreation
+<head>
+  <meta charset="utf-8">
 
-========================================= */
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
 
+  <title>Uncertificated Securities Market (USM) | CLP Group</title>
 
-/* BASIC RESET */
+  <meta
+    name="description"
+    content="Information for CLP Holdings shareholders on Hong Kong's Uncertificated Securities Market regime, effective 16 November 2026."
+  >
 
-html{
+  <link rel="stylesheet" href="style.css">
+</head>
 
-font-size:16px;
 
-}
+<body>
 
 
+<!-- =========================================================
+     CLP HEADER
+     DESKTOP VERSION
+========================================================= -->
 
-*{
+<header class="clp-header">
 
-box-sizing:border-box;
+  <div class="clp-header-container">
 
-}
 
+    <!-- =========================
+         LOGO
+    ========================== -->
 
+    <a
+      class="clp-logo"
+      href="#"
+      aria-label="CLP Group home"
+    >
+      <img
+        src="CLP_125_Logo_13-01.png"
+        alt="CLP Group — 125 years"
+      >
+    </a>
 
-img{
 
-max-width:100%;
 
-height:auto;
+    <!-- =========================
+         MAIN NAVIGATION
+    ========================== -->
 
-}
+    <nav
+      class="clp-navigation"
+      aria-label="Main navigation"
+    >
 
+      <ul class="main-nav">
 
 
+        <!-- =================================================
+             ABOUT
+        ================================================== -->
 
+        <li class="nav-item has-mega-menu">
 
-:root{
+          <a href="#">
+            About
+          </a>
 
---clp-blue:#0066B3;
 
---clp-dark:#003B70;
+          <div class="mega-menu">
 
---clp-cyan:#009AD6;
+            <div class="mega-menu-inner mega-menu-about">
 
---text:#333333;
 
---light-grey:#F5F6F7;
+              <!-- COLUMN 1 -->
 
---border:#D9D9D9;
+              <div class="mega-column">
 
-}
+                <h3>Overview</h3>
 
+                <a href="#">
+                  CLP at a Glance
+                </a>
 
+                <a href="#">
+                  Our Leadership
+                </a>
 
+                <a href="#">
+                  Our Purpose
+                </a>
 
+                <a href="#">
+                  Value Framework
+                </a>
 
-body{
+                <a href="#">
+                  Our History
+                </a>
 
-margin:0;
+              </div>
 
-overflow-x:hidden;
 
-font-family:
-Arial,
-Helvetica,
-sans-serif;
+              <!-- COLUMN 2 -->
 
-color:var(--text);
+              <div class="mega-column">
 
-background:white;
+                <h3>Our Business</h3>
 
-}
+                <a href="#">
+                  Our Regional Presence
+                </a>
 
+                <a href="#">
+                  Assets &amp; Services
+                </a>
 
+                <a href="#">
+                  Innovation
+                </a>
 
+              </div>
 
 
-a{
+              <!-- COLUMN 3 -->
 
-text-decoration:none;
+              <div class="mega-column">
 
-cursor:pointer;
+                <h3>Corporate Governance</h3>
 
-}
+                <a href="#">
+                  Our Unique Approach
+                </a>
 
+                <a href="#">
+                  Company Articles, Codes, Policies &amp; Guidelines
+                </a>
 
+              </div>
 
 
+              <!-- COLUMN 4 -->
 
-/* =========================================
-GLOBAL CONTAINER
-========================================= */
+              <div class="mega-column">
 
+                <h3>Insight</h3>
 
-.container{
+                <a href="#">
+                  CEO Blog
+                </a>
 
-width:100%;
+              </div>
 
-max-width:1280px;
 
-padding-left:40px;
+            </div>
 
-padding-right:40px;
+          </div>
 
-margin:auto;
+        </li>
 
-}
 
 
+        <!-- =================================================
+             SUSTAINABILITY
+        ================================================== -->
 
+        <li class="nav-item has-mega-menu">
 
+          <a href="#">
+            Sustainability
+          </a>
 
 
+          <div class="mega-menu">
 
-/* =========================================
-HEADER
-========================================= */
+            <div class="mega-menu-inner mega-menu-sustainability">
 
 
-.clp-header{
+              <!-- COLUMN 1 -->
 
-height:72px;
+              <div class="mega-column">
 
-background:white;
+                <h3>Overview</h3>
 
-border-bottom:1px solid #eeeeee;
+                <a href="#">
+                  Sustainability Approach
+                </a>
 
-display:flex;
+              </div>
 
-align-items:center;
 
-}
+              <!-- COLUMN 2 -->
 
+              <div class="mega-column">
 
+                <h3>Strategic Priorities</h3>
 
-.clp-header-container{
+                <a href="#">
+                  Decarbonisation
+                </a>
 
-height:72px;
+                <a href="#">
+                  Digitalisation
+                </a>
 
-max-width:1280px;
+                <a href="#">
+                  Workforce Transformation
+                </a>
 
-padding:0 40px;
+              </div>
 
-margin:auto;
 
-display:flex;
+              <!-- COLUMN 3 -->
 
-align-items:center;
+              <div class="mega-column">
 
-justify-content:space-between;
+                <h3>Reports &amp; ESG Ratings</h3>
 
-width:100%;
+                <a href="#">
+                  Sustainability Reports
+                </a>
 
-}
+                <a href="#">
+                  ESG Ratings &amp; Awards
+                </a>
 
+              </div>
 
 
+            </div>
 
+          </div>
 
+        </li>
 
-/* LOGO */
 
 
-.clp-logo{
+        <!-- =================================================
+             INVESTOR RELATIONS
+             CURRENT MAIN SECTION
+        ================================================== -->
 
-display:flex;
+        <li class="nav-item has-mega-menu active">
 
-align-items:center;
+          <a
+            href="#"
+            aria-current="page"
+          >
+            Investor Relations
+          </a>
 
-}
 
+          <div class="mega-menu">
 
+            <div class="mega-menu-inner mega-menu-investor">
 
-.clp-logo img{
 
-height:auto;
+              <!-- COLUMN 1 -->
 
-max-height:42px;
+              <div class="mega-column">
 
-width:auto;
+                <h3>
+                  Financial Reporting
+                </h3>
 
-display:block;
+                <a href="#">
+                  Quick Facts
+                </a>
 
-}
+                <a href="#">
+                  Results &amp; Presentations
+                </a>
 
+                <a href="#">
+                  Financial Reports
+                </a>
 
+                <a href="#">
+                  Announcements &amp; Circulars
+                </a>
 
+              </div>
 
 
 
-/* NAVIGATION */
+              <!-- COLUMN 2 -->
 
+              <div class="mega-column">
 
-.clp-navigation ul{
+                <h3>
+                  Investor Information
+                </h3>
 
-display:flex;
+                <a href="#">
+                  Share Price
+                </a>
 
-gap:38px;
+                <a href="#">
+                  Dividends
+                </a>
 
-align-items:center;
+                <a href="#">
+                  Financial Calendar
+                </a>
 
-list-style:none;
+                <a href="#">
+                  Shareholding Structure
+                </a>
 
-margin:0;
+                <a href="#">
+                  Credit Ratings
+                </a>
 
-padding:0;
+                <a href="#">
+                  CLP Climate Action Finance Framework
+                </a>
 
-}
+                <a href="#">
+                  Investor Contacts
+                </a>
 
+                <a href="#">
+                  Past Events &amp; Conferences
+                </a>
 
+              </div>
 
 
 
-.nav-item{
+              <!-- COLUMN 3 -->
 
-height:72px;
+              <div class="mega-column">
 
-display:flex;
+                <h3>
+                  Shareholder Engagement
+                </h3>
 
-align-items:center;
+                <a href="#">
+                  General Meetings
+                </a>
 
-position:relative;
+                <a href="#">
+                  Shareholders' Visit Programme
+                </a>
 
-}
+                <a href="#">
+                  Shareholder Services
+                </a>
 
+                <a
+                  class="current-page"
+                  href="#"
+                  aria-current="page"
+                >
+                  Uncertificated Securities Market
+                </a>
 
+              </div>
 
 
+            </div>
 
-.nav-item>a{
+          </div>
 
-font-size:14px;
+        </li>
 
-color:var(--clp-dark);
 
-}
 
+        <!-- =================================================
+             CAREERS
+        ================================================== -->
 
+        <li class="nav-item has-mega-menu">
 
+          <a href="#">
+            Careers
+          </a>
 
 
-.nav-item.active::after{
+          <div class="mega-menu">
 
-content:"";
+            <div class="mega-menu-inner mega-menu-careers">
 
-position:absolute;
 
-bottom:0;
+              <div class="mega-column">
 
-left:0;
+                <h3>
+                  Working at CLP
+                </h3>
 
-width:100%;
+                <a href="#">
+                  Cares for People
+                </a>
 
-height:3px;
+                <a href="#">
+                  People Stories
+                </a>
 
-background:var(--clp-blue);
+                <a href="#">
+                  Working with Us
+                </a>
 
-}
+              </div>
 
 
+              <div class="mega-column">
 
+                <h3>
+                  Opportunities
+                </h3>
 
+                <a href="#">
+                  Job Opportunities
+                </a>
 
+                <a href="#">
+                  Engineering Graduate Trainee Programme
+                </a>
 
+              </div>
 
-/* MEGA MENU */
 
+            </div>
 
-.mega-menu{
+          </div>
 
-display:none;
+        </li>
 
-position:absolute;
 
-top:72px;
 
-left:-350px;
+        <!-- =================================================
+             MEDIA CENTRE
+        ================================================== -->
 
-width:950px;
+        <li class="nav-item has-mega-menu">
 
-background:white;
+          <a href="#">
+            Media Centre
+          </a>
 
-padding:40px;
 
-box-shadow:
-0 8px 25px rgba(0,0,0,.15);
+          <div class="mega-menu">
 
-grid-template-columns:repeat(3,1fr);
+            <div class="mega-menu-inner mega-menu-media">
 
-gap:40px;
 
-align-items:start;
+              <div class="mega-column">
 
-z-index:100;
+                <h3>
+                  Resources
+                </h3>
 
-}
+                <a href="#">
+                  Media Releases
+                </a>
 
+                <a href="#">
+                  Publications
+                </a>
 
+                <a href="#">
+                  Photos &amp; Videos
+                </a>
 
+              </div>
 
 
-.nav-item:hover .mega-menu{
+            </div>
 
-display:grid;
+          </div>
 
-}
+        </li>
 
 
+      </ul>
 
+    </nav>
 
 
-.mega-column h3{
 
-font-size:18px;
+    <!-- =========================
+         HEADER TOOLS
+    ========================== -->
 
-color:var(--clp-dark);
+    <div class="clp-header-tools">
 
-margin-bottom:20px;
 
-}
+      <!-- SEARCH -->
 
+      <button
+        class="search-button"
+        type="button"
+        aria-label="Search this site"
+      >
 
+        <svg
+          width="21"
+          height="21"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          aria-hidden="true"
+        >
 
+          <circle
+            cx="10.5"
+            cy="10.5"
+            r="6.5"
+          ></circle>
 
+          <line
+            x1="15.5"
+            y1="15.5"
+            x2="21"
+            y2="21"
+          ></line>
 
-.mega-column a{
+        </svg>
 
-display:block;
+      </button>
 
-font-size:14px;
 
-color:#444;
 
-margin-bottom:14px;
+      <!-- DIVIDER -->
 
-}
+      <span
+        class="header-tool-divider"
+        aria-hidden="true"
+      ></span>
 
 
 
+      <!-- LANGUAGE -->
 
+      <a
+        class="language-switcher"
+        href="#"
+        lang="zh-Hant"
+      >
+        繁體中文
+      </a>
 
-.current-page{
 
-color:var(--clp-blue)!important;
+    </div>
 
-font-weight:bold;
 
-}
+  </div>
 
+</header>
 
 
 
 
 
-/* HEADER TOOLS */
+<!-- =========================================================
+     MAIN CONTENT
+========================================================= -->
 
+<main id="main">
 
-.clp-header-tools{
 
-display:flex;
 
-align-items:center;
+<!-- =========================================================
+     HERO
+========================================================= -->
 
-gap:25px;
+<section class="hero">
 
-}
+  <div class="container">
 
 
+    <!-- BREADCRUMB -->
 
+    <nav
+      class="breadcrumb"
+      aria-label="Breadcrumb"
+    >
 
+      <a href="#">
+        Home
+      </a>
 
-.search-button{
+      <span>/</span>
 
-border:none;
+      <a href="#">
+        Investor Relations
+      </a>
 
-background:none;
+      <span>/</span>
 
-font-size:22px;
+      <a href="#">
+        Shareholder Information
+      </a>
 
-color:var(--clp-blue);
+      <span>/</span>
 
-}
+      <span>
+        Uncertificated Securities Market
+      </span>
 
+    </nav>
 
 
 
+    <h1>
+      Uncertificated Securities Market (USM)
+    </h1>
 
-.language-switcher{
 
-font-size:14px;
 
-color:var(--clp-blue);
+    <p>
 
-}
+      Hong Kong's Uncertificated Securities Market regime
+      takes effect on 16 November 2026.
 
-/* =========================================
-HERO
-========================================= */
+      From that date, shareholders will be able to hold and
+      transfer legal title to shares in their own names
+      electronically, without paper share certificates.
 
+      Existing shareholdings move across in phases over the
+      following five years.
 
-.hero{
+      This page brings together our announcements,
+      shareholder guidance and key dates for the transition.
 
-padding-top:60px;
+    </p>
 
-padding-bottom:80px;
 
-}
+  </div>
 
+</section>
 
 
 
 
-.breadcrumb{
 
-font-size:13px;
+<!-- =========================================================
+     HIGHLIGHTS
+========================================================= -->
 
-color:#666;
+<section class="highlights">
 
-margin-bottom:30px;
+  <div class="container">
 
-}
 
+    <h2>
+      What this means for shareholders
+    </h2>
 
 
 
+    <div class="highlight-grid">
 
-.hero h1{
 
-font-size:42px;
+      <!-- =========================
+           CARD 1
+      ========================== -->
 
-font-weight:300;
+      <div class="highlight-card">
 
-line-height:1.2;
+        <div class="image-placeholder">
+          Image placeholder 560 &times; 360
+        </div>
 
-color:var(--clp-blue);
 
-margin:0 0 25px;
+        <h3>
+          Paper certificates are phased out
+        </h3>
 
-}
 
+        <p>
 
+          Share certificates stop being issued once our shares
+          become participating securities.
 
+          Certificates you already hold stay valid until your
+          holding is converted, and lost certificates will no
+          longer be replaced.
 
+        </p>
 
-.hero p{
 
-max-width:900px;
+        <a href="#">
+          How dematerialisation works
+        </a>
 
-font-size:16px;
+      </div>
 
-line-height:30px;
 
-}
 
+      <!-- =========================
+           CARD 2
+      ========================== -->
 
+      <div class="highlight-card">
 
+        <div class="image-placeholder">
+          Image placeholder 560 &times; 360
+        </div>
 
 
+        <h3>
+          Holding shares in your own name
+        </h3>
 
 
+        <p>
 
+          To hold shares electronically in your own name you
+          will need a USI Facility, opened with our Approved
+          Securities Registrar.
 
-/* =========================================
-HIGHLIGHTS
-========================================= */
+          It lets you view your holding, receive entitlements
+          and transfer shares without paper.
 
+        </p>
 
-.highlights{
 
-background:var(--light-grey);
+        <a href="#">
+          Opening a USI Facility
+        </a>
 
-padding:70px 0;
+      </div>
 
-}
 
 
+      <!-- =========================
+           CARD 3
+      ========================== -->
 
+      <div class="highlight-card">
 
+        <div class="image-placeholder">
+          Image placeholder 560 &times; 360
+        </div>
 
-.highlights h2{
 
-font-size:32px;
+        <h3>
+          Your rights are unchanged
+        </h3>
 
-font-weight:300;
 
-color:var(--clp-blue);
+        <p>
 
-margin-bottom:35px;
+          Voting, dividends and the right to attend general
+          meetings are unaffected.
 
-}
+          What changes is the form your title takes and the
+          way you give instructions to the registrar.
 
+        </p>
 
 
+        <a href="#">
+          Shareholder rights under USM
+        </a>
 
+      </div>
 
-.highlight-grid{
 
-display:grid;
+    </div>
 
-grid-template-columns:repeat(3,1fr);
 
-gap:30px;
+  </div>
 
-}
+</section>
 
 
 
 
 
-.highlight-card{
+<!-- =========================================================
+     ANNOUNCEMENTS
+========================================================= -->
 
-background:white;
+<section class="documents">
 
-min-height:340px;
+  <div class="container">
 
-}
 
+    <h2>
+      Announcements
+    </h2>
 
 
 
+    <div class="announcement-list">
 
-.image-placeholder{
 
-height:180px;
+      <!-- ANNOUNCEMENT 1 -->
 
-background:#e6e6e6;
+      <div class="announcement-row">
 
-display:flex;
+        <div class="announcement-date">
+          dd/mm/yyyy
+        </div>
 
-align-items:center;
+        <div class="announcement-title">
+          USM Participation Information and Transition Plan
+        </div>
 
-justify-content:center;
+        <a
+          class="announcement-download"
+          href="#"
+        >
+          Download PDF (XXX KB)
+        </a>
 
-font-size:14px;
+      </div>
 
-color:#777;
 
-}
 
+      <!-- ANNOUNCEMENT 2 -->
 
+      <div class="announcement-row">
 
+        <div class="announcement-date">
+          dd/mm/yyyy
+        </div>
 
+        <div class="announcement-title">
+          Notice of Implementation of the
+          Uncertificated Securities Market (USM)
+        </div>
 
-.highlight-card h3{
+        <a
+          class="announcement-download"
+          href="#"
+        >
+          Download PDF (XXX KB)
+        </a>
 
-font-size:18px;
+      </div>
 
-font-weight:600;
 
-color:var(--clp-dark);
 
-padding:25px 30px 10px;
+      <!-- ANNOUNCEMENT 3 -->
 
-margin:0;
+      <div class="announcement-row">
 
-}
+        <div class="announcement-date">
+          dd/mm/yyyy
+        </div>
 
+        <div class="announcement-title">
+          Explanatory Statement on the New Articles of Association
+        </div>
 
+        <a
+          class="announcement-download"
+          href="#"
+        >
+          Download PDF (XXX KB)
+        </a>
 
+      </div>
 
 
-.highlight-card p{
 
-font-size:14px;
+      <!-- ANNOUNCEMENT 4 -->
 
-line-height:24px;
+      <div class="announcement-row">
 
-padding:0 30px;
+        <div class="announcement-date">
+          dd/mm/yyyy
+        </div>
 
-margin-bottom:20px;
+        <div class="announcement-title">
 
-}
+          Proposed New Articles of Association Subject to
+          Adoption by Shareholders at the 2026 Annual General
+          Meeting (clean version)
 
+        </div>
 
+        <a
+          class="announcement-download"
+          href="#"
+        >
+          Download PDF (XXX KB)
+        </a>
 
+      </div>
 
 
-.highlight-card a{
 
-display:block;
+      <!-- ANNOUNCEMENT 5 -->
 
-padding:0 30px 30px;
+      <div class="announcement-row">
 
-font-size:14px;
+        <div class="announcement-date">
+          dd/mm/yyyy
+        </div>
 
-color:var(--clp-blue);
+        <div class="announcement-title">
 
-}
+          Proposed New Articles of Association Subject to
+          Adoption by Shareholders at the 2026 Annual General
+          Meeting (marked-up version)
 
+        </div>
 
+        <a
+          class="announcement-download"
+          href="#"
+        >
+          Download PDF (XXX KB)
+        </a>
 
+      </div>
 
 
+    </div>
 
 
+  </div>
 
+</section>
 
-/* =========================================
-ANNOUNCEMENTS
-CLP DOCUMENT LIST STYLE
-========================================= */
 
 
-.documents{
 
-padding:70px 0;
 
-}
+<!-- =========================================================
+     VIDEO
+========================================================= -->
 
+<section class="video-section">
 
+  <div class="container">
 
 
+    <div class="video-layout">
 
-.documents h2{
 
-font-size:32px;
+      <!-- VIDEO PLACEHOLDER -->
 
-font-weight:300;
+      <div class="video-placeholder">
+        Video placeholder 16:9
+      </div>
 
-color:var(--clp-blue);
 
-margin-bottom:35px;
 
-}
+      <!-- VIDEO CONTENT -->
 
+      <div class="video-content">
 
 
+        <h2>
+          Watch: preparing for the transition
+        </h2>
 
 
-.announcement-list{
+        <p>
 
-width:100%;
+          A short walkthrough of what changes on
+          16 November 2026, when your own holding is likely
+          to be converted, and the three things worth doing
+          before then:
 
-}
+          check your registered details, decide how you want
+          to hold your shares, and keep your certificates
+          somewhere safe until they are called in.
 
+        </p>
 
 
+        <a href="#">
+          View the full transcript
+        </a>
 
 
-.announcement-row{
+      </div>
 
-display:grid;
 
-grid-template-columns:130px minmax(0,1fr) 180px;
+    </div>
 
-align-items:center;
 
-min-height:70px;
+  </div>
 
-border-bottom:1px solid var(--border);
+</section>
 
-gap:30px;
 
-}
 
 
 
+<!-- =========================================================
+     USEFUL LINKS
+========================================================= -->
 
+<section class="links">
 
-.announcement-date{
+  <div class="container">
 
-font-size:14px;
 
-color:#888;
+    <h2>
+      Useful links
+    </h2>
 
-white-space:nowrap;
 
-}
 
+    <div class="link-grid">
 
 
+      <!-- LEFT COLUMN -->
 
+      <div>
 
-.announcement-title{
+        <a href="#">
+          Announcements and circulars
+        </a>
 
-font-size:16px;
+        <a href="#">
+          Articles of Association
+        </a>
 
-line-height:26px;
+        <a href="#">
+          2026 Annual General Meeting
+        </a>
 
-color:#333;
+        <a href="#">
+          Dividend history and payment options
+        </a>
 
-word-break:normal;
+        <a href="#">
+          Contact the Share Registrar
+        </a>
 
-}
+      </div>
 
 
 
+      <!-- RIGHT COLUMN -->
 
+      <div>
 
-.announcement-download{
+        <a href="#">
+          SFC — Uncertificated Securities Market
+        </a>
 
-font-size:14px;
+        <a href="#">
+          HKEX — USM information for investors
+        </a>
 
-color:var(--clp-blue);
+        <a href="#">
+          Federation of Share Registrars
+        </a>
 
-text-align:right;
+        <a href="#">
+          List of Approved Securities Registrars
+        </a>
 
-white-space:nowrap;
+        <a href="#">
+          Glossary of USM terms
+        </a>
 
-}
+      </div>
 
 
+    </div>
 
 
+  </div>
 
-.announcement-download:hover{
+</section>
 
-text-decoration:underline;
 
-}
 
 
 
+<!-- =========================================================
+     FAQ
+========================================================= -->
 
+<section class="faq">
 
+  <div class="container">
 
 
+    <div class="faq-box">
 
 
-/* =========================================
-VIDEO
-========================================= */
+      <div
+        class="faq-line"
+        aria-hidden="true"
+      ></div>
 
 
-.video-section{
 
-background:var(--light-grey);
+      <h2>
+        Still have questions about USM?
+      </h2>
 
-padding:70px 0;
 
-}
 
+      <button type="button">
+        Read the FAQs
+      </button>
 
 
+    </div>
 
 
-.video-layout{
+  </div>
 
-display:grid;
+</section>
 
-grid-template-columns:1fr 1fr;
 
-gap:50px;
 
-align-items:center;
+</main>
 
-}
 
+</body>
 
-
-
-
-.video-placeholder{
-
-height:300px;
-
-background:#ddd;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-color:white;
-
-}
-
-
-
-
-
-
-
-
-
-/* =========================================
-USEFUL LINKS
-========================================= */
-
-
-.links{
-
-padding:70px 0;
-
-}
-
-
-
-
-
-.links h2{
-
-font-size:32px;
-
-font-weight:300;
-
-color:var(--clp-blue);
-
-margin-bottom:30px;
-
-}
-
-
-
-
-
-.link-grid{
-
-display:grid;
-
-grid-template-columns:1fr 1fr;
-
-gap:60px;
-
-}
-
-
-
-
-
-.link-grid a{
-
-display:block;
-
-margin-bottom:18px;
-
-font-size:14px;
-
-color:var(--clp-blue);
-
-}
-
-
-
-
-
-
-
-
-
-/* =========================================
-FAQ CTA
-========================================= */
-
-
-.faq{
-
-padding:40px 0 80px;
-
-}
-
-
-
-
-
-.faq-box{
-
-min-height:150px;
-
-display:flex;
-
-align-items:center;
-
-gap:30px;
-
-border:1px solid #eeeeee;
-
-padding:40px;
-
-}
-
-
-
-
-
-.faq-line{
-
-height:100px;
-
-width:6px;
-
-background:var(--clp-cyan);
-
-}
-
-
-
-
-
-.faq-box h2{
-
-font-size:32px;
-
-font-weight:300;
-
-color:var(--clp-blue);
-
-}
-
-
-
-
-
-.faq-box button{
-
-margin-left:auto;
-
-background:white;
-
-border:1px solid var(--clp-blue);
-
-color:var(--clp-blue);
-
-padding:10px 25px;
-
-}
-
-
-
-
-
-
-
-
-
-/* =========================================
-MOBILE
-========================================= */
-
-
-.mobile-menu-button{
-
-display:none;
-
-}
-
-
-
-
-
-
-@media(max-width:900px){
-
-
-
-.container{
-
-padding-left:20px;
-
-padding-right:20px;
-
-}
-
-
-
-
-
-.clp-navigation{
-
-display:none;
-
-}
-
-
-
-
-
-.mobile-menu-button{
-
-display:block;
-
-}
-
-
-
-
-
-.highlight-grid,
-.video-layout,
-.link-grid{
-
-grid-template-columns:1fr;
-
-}
-
-
-
-
-
-.hero h1{
-
-font-size:36px;
-
-}
-
-
-
-
-
-.announcement-row{
-
-grid-template-columns:1fr;
-
-gap:10px;
-
-padding:20px 0;
-
-}
-
-
-
-
-
-.announcement-download{
-
-text-align:left;
-
-}
-
-
-
-
-
-.clp-logo img{
-
-max-height:35px;
-
-}
-
-
-
-}
+</html>
