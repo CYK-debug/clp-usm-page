@@ -49,7 +49,7 @@ button {
 
 
 /* =========================================================
-   2. COLOURS / GLOBAL VARIABLES
+   2. GLOBAL VARIABLES
 ========================================================= */
 
 :root {
@@ -96,7 +96,7 @@ button {
     position: relative;
 
     width: 100%;
-    height: 57px;
+    height: var(--header-height);
 
     background: #ffffff;
 
@@ -108,6 +108,7 @@ button {
 
 /* =========================================================
    5. HEADER CONTAINER
+   SAME WIDTH AS PAGE CONTENT
 ========================================================= */
 
 .clp-header-container {
@@ -116,7 +117,7 @@ button {
     width: 100%;
     max-width: var(--content-width);
 
-    height: 57px;
+    height: var(--header-height);
 
     margin-left: auto;
     margin-right: auto;
@@ -130,7 +131,35 @@ button {
 
 
 /* =========================================================
-   6. LOGO
+   6. HEADER BOTTOM LINE
+========================================================= */
+
+.clp-header-container::after {
+    content: "";
+
+    position: absolute;
+
+    /*
+       Start approximately where About begins.
+       Adjust this value only if you later change logo/nav spacing.
+    */
+    left: 455px;
+
+    /*
+       Same right alignment as page content.
+    */
+    right: var(--content-padding);
+
+    bottom: 0;
+
+    height: 1px;
+
+    background: #0033a0;
+}
+
+
+/* =========================================================
+   7. LOGO
 ========================================================= */
 
 .clp-logo {
@@ -154,7 +183,7 @@ button {
 
 
 /* =========================================================
-   7. MAIN NAVIGATION
+   8. MAIN NAVIGATION
 ========================================================= */
 
 .clp-navigation {
@@ -162,7 +191,7 @@ button {
 
     flex: 0 0 auto;
 
-    height: 57px;
+    height: var(--header-height);
 
     /*
        Fixed Logo → About distance
@@ -175,11 +204,11 @@ button {
 
 
 /* =========================================================
-   8. NAVIGATION LIST
+   9. NAVIGATION LIST
 ========================================================= */
 
 .main-nav {
-    height: 57px;
+    height: var(--header-height);
 
     display: flex;
     align-items: center;
@@ -194,13 +223,13 @@ button {
 
 
 /* =========================================================
-   9. NAVIGATION ITEM
+   10. NAVIGATION ITEM
 ========================================================= */
 
 .nav-item {
     position: static;
 
-    height: 57px;
+    height: var(--header-height);
 
     display: flex;
     align-items: center;
@@ -208,13 +237,13 @@ button {
 
 
 /* =========================================================
-   10. NAVIGATION TEXT
+   11. NAVIGATION TEXT
 ========================================================= */
 
 .nav-item > a {
     position: relative;
 
-    height: 57px;
+    height: var(--header-height);
 
     display: flex;
     align-items: center;
@@ -232,7 +261,7 @@ button {
 
 
 /* =========================================================
-   11. NAVIGATION HOVER
+   12. NAVIGATION HOVER
 ========================================================= */
 
 .nav-item > a:hover,
@@ -243,7 +272,7 @@ button {
 
 
 /* =========================================================
-   12. ACTIVE UNDERLINE
+   13. ACTIVE UNDERLINE
 ========================================================= */
 
 .nav-item > a::after {
@@ -275,39 +304,22 @@ button {
 
 
 /* =========================================================
-   13. BLUE LINE UNDER NAVIGATION
-========================================================= */
-
-.clp-navigation::after {
-    content: "";
-
-    position: absolute;
-
-    left: 0;
-    right: -139px;
-
-    bottom: 0;
-
-    height: 1px;
-
-    background: #0033a0;
-}
-
-
-/* =========================================================
    14. HEADER TOOLS
+   SEARCH + LANGUAGE
 ========================================================= */
 
 .clp-header-tools {
-    height: 57px;
+    position: absolute;
+
+    top: 0;
+    right: var(--content-padding);
+
+    height: var(--header-height);
 
     display: flex;
     align-items: center;
 
-    flex: 0 0 auto;
-
-    margin-left: 26px;
-
+    margin: 0;
     padding: 0;
 
     gap: 0;
@@ -320,7 +332,7 @@ button {
 
 .search-button {
     width: 14px;
-    height: 57px;
+    height: var(--header-height);
 
     display: flex;
     align-items: center;
@@ -364,7 +376,6 @@ button {
 
     font-size: 12px;
     font-weight: 400;
-
     line-height: 1;
 
     white-space: nowrap;
@@ -378,7 +389,7 @@ button {
 .mega-menu {
     position: absolute;
 
-    top: 57px;
+    top: var(--header-height);
     left: 0;
     right: 0;
 
@@ -426,7 +437,6 @@ button {
 
 .mega-menu-inner {
     width: 100%;
-
     max-width: 1200px;
 
     margin-left: auto;
@@ -1004,7 +1014,7 @@ main {
 }
 
 .faq-box button:hover {
-    background: var(--clp-blue);
+    background: var(--clp-blue;
 
     color: #ffffff;
 }
