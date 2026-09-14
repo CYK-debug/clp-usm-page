@@ -24,14 +24,12 @@ body {
     margin: 0;
     padding: 0;
 
-    min-width: 1008px;
-
     font-family: Arial, Helvetica, sans-serif;
 
     color: #333333;
     background: #ffffff;
 
-    overflow-x: auto;
+    overflow-x: hidden;
 }
 
 img {
@@ -98,8 +96,6 @@ button {
     position: relative;
 
     width: 100%;
-    min-width: 1008px;
-
     height: 57px;
 
     background: #ffffff;
@@ -118,11 +114,12 @@ button {
     position: relative;
 
     width: 100%;
-    min-width: 1008px;
+    max-width: 1008px;
 
     height: 57px;
 
-    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
 
     padding-left: 4px;
     padding-right: 20px;
