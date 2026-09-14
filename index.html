@@ -1,979 +1,1107 @@
-<!DOCTYPE html>
-<html lang="en">
+/* =========================================================
+   CLP USM PAGE
+   DESKTOP ONLY
 
-<head>
-  <meta charset="utf-8">
+   - No JavaScript
+   - No external fonts
+   - Only Investor Relations has dropdown navigation
+========================================================= */
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1"
-  >
 
-  <title>Uncertificated Securities Market (USM) | CLP Group</title>
+/* =========================================================
+   1. BASIC RESET
+========================================================= */
 
-  <meta
-    name="description"
-    content="Information for CLP Holdings shareholders on Hong Kong's Uncertificated Securities Market regime, effective 16 November 2026."
-  >
+html {
+    font-size: 16px;
+}
 
-  <link rel="stylesheet" href="style.css">
-</head>
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
 
+body {
+    margin: 0;
+    padding: 0;
 
-<body>
+    font-family: Arial, Helvetica, sans-serif;
 
+    color: #333333;
+    background: #ffffff;
 
-<!-- =========================================================
-     CLP HEADER
-     DESKTOP VERSION
-========================================================= -->
+    overflow-x: hidden;
+}
 
-<header class="clp-header">
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
 
-  <div class="clp-header-container">
+a {
+    color: inherit;
+    text-decoration: none;
+}
 
+button {
+    font: inherit;
+}
 
-    <!-- =========================
-         LOGO
-    ========================== -->
 
-    <a
-      class="clp-logo"
-      href="#"
-      aria-label="CLP Group home"
-    >
-      <img
-        src="CLP_125_Logo_13-01.png"
-        alt="CLP Group — 125 years"
-      >
-    </a>
+/* =========================================================
+   2. GLOBAL VARIABLES
+========================================================= */
 
+:root {
+    --clp-blue: #0066b3;
+    --clp-dark-blue: #003b70;
+    --clp-cyan: #009ad6;
 
+    --text-main: #333333;
+    --text-secondary: #666666;
+    --text-light: #888888;
 
-    <!-- =========================
-         MAIN NAVIGATION
-    ========================== -->
+    --light-grey: #f5f6f7;
+    --border-light: #e5e5e5;
+    --border-medium: #d5d5d5;
 
-    <nav
-      class="clp-navigation"
-      aria-label="Main navigation"
-    >
+    --header-height: 57px;
 
-      <ul class="main-nav">
+    /*
+       Header and page content use exactly
+       the same horizontal grid.
+    */
+    --content-width: 1280px;
+    --content-padding: 40px;
 
+    /*
+       Investor Relations dropdown colour
+    */
+    --dropdown-background: #d9effc;
+}
 
-        <!-- =================================================
-             ABOUT
-        ================================================== -->
 
-        <li class="nav-item has-mega-menu">
+/* =========================================================
+   3. PAGE CONTENT CONTAINER
+========================================================= */
 
-          <a href="#">
-            About
-          </a>
+.container {
+    width: 100%;
+    max-width: var(--content-width);
 
+    margin-left: auto;
+    margin-right: auto;
 
-          <div class="mega-menu">
+    padding-left: var(--content-padding);
+    padding-right: var(--content-padding);
+}
 
-            <div class="mega-menu-inner mega-menu-about">
 
+/* =========================================================
+   4. HEADER
+========================================================= */
 
-              <!-- COLUMN 1 -->
+.clp-header {
+    position: relative;
 
-              <div class="mega-column">
+    width: 100%;
+    height: var(--header-height);
 
-                <h3>Overview</h3>
+    background: #ffffff;
 
-                <a href="#">
-                  CLP at a Glance
-                </a>
+    z-index: 1000;
+}
 
-                <a href="#">
-                  Our Leadership
-                </a>
 
-                <a href="#">
-                  Our Purpose
-                </a>
+/* =========================================================
+   5. HEADER CONTAINER
+   SAME GRID AS PAGE CONTENT
+========================================================= */
 
-                <a href="#">
-                  Value Framework
-                </a>
+.clp-header-container {
+    position: relative;
 
-                <a href="#">
-                  Our History
-                </a>
+    width: 100%;
+    max-width: var(--content-width);
 
-              </div>
+    height: var(--header-height);
 
+    margin-left: auto;
+    margin-right: auto;
 
-              <!-- COLUMN 2 -->
+    padding-left: var(--content-padding);
+    padding-right: var(--content-padding);
 
-              <div class="mega-column">
+    display: flex;
+    align-items: flex-start;
+}
 
-                <h3>Our Business</h3>
 
-                <a href="#">
-                  Our Regional Presence
-                </a>
+/* =========================================================
+   6. HEADER BOTTOM BLUE LINE
+========================================================= */
 
-                <a href="#">
-                  Assets &amp; Services
-                </a>
+.clp-header-container::after {
+    content: "";
 
-                <a href="#">
-                  Innovation
-                </a>
+    position: absolute;
 
-              </div>
+    /*
+       Approximate beginning of About navigation
+    */
+    left: 483px;
 
+    /*
+       Exactly aligned with content right edge
+    */
+    right: var(--content-padding);
 
-              <!-- COLUMN 3 -->
+    bottom: 0;
 
-              <div class="mega-column">
+    height: 1px;
 
-                <h3>Corporate Governance</h3>
+    background: #0033a0;
 
-                <a href="#">
-                  Our Unique Approach
-                </a>
+    z-index: 1;
+}
 
-                <a href="#">
-                  Company Articles, Codes, Policies &amp; Guidelines
-                </a>
 
-              </div>
+/* =========================================================
+   7. LOGO
+========================================================= */
 
+.clp-logo {
+    display: block;
 
-              <!-- COLUMN 4 -->
+    flex: 0 0 auto;
 
-              <div class="mega-column">
+    margin: 0;
+    padding: 0;
 
-                <h3>Insight</h3>
+    z-index: 3;
+}
 
-                <a href="#">
-                  CEO Blog
-                </a>
+.clp-logo img {
+    width: 234px;
+    height: auto;
 
-              </div>
+    margin: 0;
+    padding: 0;
 
+    display: block;
+}
 
-            </div>
 
-          </div>
+/* =========================================================
+   8. MAIN NAVIGATION
+========================================================= */
 
-        </li>
+.clp-navigation {
+    /*
+       Intentionally static so the dropdown can use
+       .clp-header-container as its positioning reference.
+    */
+    position: static;
 
+    flex: 0 0 auto;
 
+    height: var(--header-height);
 
-        <!-- =================================================
-             SUSTAINABILITY
-        ================================================== -->
+    /*
+       Fixed Logo → About distance.
+       This does not stretch when browser width changes.
+    */
+    margin-left: 209px;
 
-        <li class="nav-item has-mega-menu">
+    display: flex;
+    align-items: center;
 
-          <a href="#">
-            Sustainability
-          </a>
+    z-index: 3;
+}
 
 
-          <div class="mega-menu">
+/* =========================================================
+   9. NAVIGATION LIST
+========================================================= */
 
-            <div class="mega-menu-inner mega-menu-sustainability">
+.main-nav {
+    height: var(--header-height);
 
+    display: flex;
+    align-items: center;
 
-              <!-- COLUMN 1 -->
+    gap: 26px;
 
-              <div class="mega-column">
+    margin: 0;
+    padding: 0;
 
-                <h3>Overview</h3>
+    list-style: none;
+}
 
-                <a href="#">
-                  Sustainability Approach
-                </a>
 
-              </div>
+/* =========================================================
+   10. NAVIGATION ITEM
+========================================================= */
 
+.nav-item {
+    position: static;
 
-              <!-- COLUMN 2 -->
+    height: var(--header-height);
 
-              <div class="mega-column">
+    display: flex;
+    align-items: center;
+}
 
-                <h3>Strategic Priorities</h3>
 
-                <a href="#">
-                  Decarbonisation
-                </a>
+/* =========================================================
+   11. NAVIGATION LINKS
+========================================================= */
 
-                <a href="#">
-                  Digitalisation
-                </a>
+.nav-item > a {
+    position: relative;
 
-                <a href="#">
-                  Workforce Transformation
-                </a>
+    height: var(--header-height);
 
-              </div>
+    display: flex;
+    align-items: center;
 
+    padding: 0;
 
-              <!-- COLUMN 3 -->
+    color: #0033a0;
 
-              <div class="mega-column">
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1;
 
-                <h3>Reports &amp; ESG Ratings</h3>
+    white-space: nowrap;
 
-                <a href="#">
-                  Sustainability Reports
-                </a>
+    z-index: 3;
+}
 
-                <a href="#">
-                  ESG Ratings &amp; Awards
-                </a>
 
-              </div>
+/* =========================================================
+   12. NAVIGATION HOVER
+========================================================= */
 
+.nav-item > a:hover,
+.nav-item:hover > a,
+.nav-item:focus-within > a {
+    color: #0033a0;
+}
 
-            </div>
 
-          </div>
+/* =========================================================
+   13. NAV ACTIVE / HOVER UNDERLINE
+========================================================= */
 
-        </li>
+.nav-item > a::after {
+    content: "";
 
+    position: absolute;
 
+    left: 0;
+    right: 0;
 
-        <!-- =================================================
-             INVESTOR RELATIONS
-             CURRENT MAIN SECTION
-        ================================================== -->
+    bottom: 2px;
 
-        <li class="nav-item has-mega-menu active">
+    height: 2px;
 
-          <a
-            href="#"
-            aria-current="page"
-          >
-            Investor Relations
-          </a>
+    background: #0033a0;
 
+    transform: scaleX(0);
 
-          <div class="mega-menu">
+    z-index: 5;
+}
 
-            <div class="mega-menu-inner mega-menu-investor">
+.nav-item:hover > a::after,
+.nav-item:focus-within > a::after,
+.nav-item.active > a::after {
+    transform: scaleX(1);
+}
 
+.nav-item.active > a {
+    color: #0033a0;
+}
 
-              <!-- COLUMN 1 -->
 
-              <div class="mega-column">
+/* =========================================================
+   14. HEADER TOOLS
+========================================================= */
 
-                <h3>
-                  Financial Reporting
-                </h3>
+.clp-header-tools {
+    position: absolute;
 
-                <a href="#">
-                  Quick Facts
-                </a>
+    top: 0;
 
-                <a href="#">
-                  Results &amp; Presentations
-                </a>
+    /*
+       Same right boundary as the page content.
+    */
+    right: var(--content-padding);
 
-                <a href="#">
-                  Financial Reports
-                </a>
+    height: var(--header-height);
 
-                <a href="#">
-                  Announcements &amp; Circulars
-                </a>
+    display: flex;
+    align-items: center;
 
-              </div>
+    margin: 0;
+    padding: 0;
 
+    gap: 0;
 
+    z-index: 4;
+}
 
-              <!-- COLUMN 2 -->
 
-              <div class="mega-column">
+/* =========================================================
+   15. SEARCH BUTTON
+========================================================= */
 
-                <h3>
-                  Investor Information
-                </h3>
+.search-button {
+    width: 15px;
+    height: var(--header-height);
 
-                <a href="#">
-                  Share Price
-                </a>
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-                <a href="#">
-                  Dividends
-                </a>
+    margin: 0;
+    padding: 0;
 
-                <a href="#">
-                  Financial Calendar
-                </a>
+    border: 0;
+    outline: 0;
 
-                <a href="#">
-                  Shareholding Structure
-                </a>
+    background: transparent;
 
-                <a href="#">
-                  Credit Ratings
-                </a>
+    color: #0033a0;
 
-                <a href="#">
-                  CLP Climate Action Finance Framework
-                </a>
+    cursor: pointer;
+}
 
-                <a href="#">
-                  Investor Contacts
-                </a>
+.search-button svg {
+    width: 15px;
+    height: 15px;
+}
 
-                <a href="#">
-                  Past Events &amp; Conferences
-                </a>
 
-              </div>
+/* =========================================================
+   16. LANGUAGE
+========================================================= */
 
+.language-switcher {
+    margin-left: 66px;
 
+    color: #0033a0;
 
-              <!-- COLUMN 3 -->
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1;
 
-              <div class="mega-column">
+    white-space: nowrap;
+}
 
-                <h3>
-                  Shareholder Engagement
-                </h3>
 
-                <a href="#">
-                  General Meetings
-                </a>
+/* =========================================================
+   17. INVESTOR RELATIONS DROPDOWN
+========================================================= */
 
-                <a href="#">
-                  Shareholders' Visit Programme
-                </a>
+.investor-dropdown {
+    position: absolute;
 
-                <a href="#">
-                  Shareholder Services
-                </a>
+    /*
+       Directly underneath the 57px header
+    */
+    top: var(--header-height);
 
-                <a
-                  class="current-page"
-                  href="#"
-                  aria-current="page"
-                >
-                  Uncertificated Securities Market
-                </a>
+    /*
+       Centre the full-width dropdown relative
+       to the centred header container.
+    */
+    left: 50%;
 
-              </div>
+    width: 100vw;
 
+    background: var(--dropdown-background);
 
-            </div>
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
 
-          </div>
+    transform:
+        translateX(-50%)
+        translateY(-3px);
 
-        </li>
+    transition:
+        opacity 0.15s ease,
+        visibility 0.15s ease,
+        transform 0.15s ease;
 
+    z-index: 900;
+}
 
 
-        <!-- =================================================
-             CAREERS
-        ================================================== -->
+/* =========================================================
+   18. SHOW INVESTOR DROPDOWN
+========================================================= */
 
-        <li class="nav-item has-mega-menu">
+.investor-menu:hover > .investor-dropdown,
+.investor-menu:focus-within > .investor-dropdown {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
 
-          <a href="#">
-            Careers
-          </a>
+    transform:
+        translateX(-50%)
+        translateY(0);
+}
 
 
-          <div class="mega-menu">
+/* =========================================================
+   19. INVESTOR DROPDOWN INNER
+========================================================= */
 
-            <div class="mega-menu-inner mega-menu-careers">
+.investor-dropdown-inner {
+    width: 100%;
+    max-width: 920px;
 
+    margin-left: auto;
+    margin-right: auto;
 
-              <div class="mega-column">
+    padding:
+        30px
+        48px
+        32px;
 
-                <h3>
-                  Working at CLP
-                </h3>
+    display: grid;
 
-                <a href="#">
-                  Cares for People
-                </a>
+    grid-template-columns:
+        1fr
+        1fr;
 
-                <a href="#">
-                  People Stories
-                </a>
+    align-items: stretch;
+}
 
-                <a href="#">
-                  Working with Us
-                </a>
 
-              </div>
+/* =========================================================
+   20. INVESTOR DROPDOWN LEFT
+========================================================= */
 
+.investor-dropdown-left {
+    padding-right: 38px;
+}
 
-              <div class="mega-column">
 
-                <h3>
-                  Opportunities
-                </h3>
+/* =========================================================
+   21. INVESTOR DROPDOWN RIGHT
+========================================================= */
 
-                <a href="#">
-                  Job Opportunities
-                </a>
+.investor-dropdown-right {
+    padding-left: 38px;
 
-                <a href="#">
-                  Engineering Graduate Trainee Programme
-                </a>
+    border-left:
+        1px solid
+        rgba(0, 70, 120, 0.18);
+}
 
-              </div>
 
+/* =========================================================
+   22. INVESTOR INFORMATION SECOND GROUP
+========================================================= */
 
-            </div>
+.investor-information {
+    margin-top: 28px;
+}
 
-          </div>
 
-        </li>
+/* =========================================================
+   23. DROPDOWN GROUP HEADING
+========================================================= */
 
+.dropdown-group h3 {
+    margin:
+        0
+        0
+        20px;
 
+    padding: 0;
 
-        <!-- =================================================
-             MEDIA CENTRE
-        ================================================== -->
+    color: #000000;
 
-        <li class="nav-item has-mega-menu">
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.3;
+}
 
-          <a href="#">
-            Media Centre
-          </a>
 
+/* =========================================================
+   24. DROPDOWN LINKS
+========================================================= */
 
-          <div class="mega-menu">
+.dropdown-group a {
+    position: relative;
 
-            <div class="mega-menu-inner mega-menu-media">
+    display: block;
 
+    width: fit-content;
+    max-width: 100%;
 
-              <div class="mega-column">
+    margin-bottom: 17px;
 
-                <h3>
-                  Resources
-                </h3>
+    color: #111111;
 
-                <a href="#">
-                  Media Releases
-                </a>
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.35;
 
-                <a href="#">
-                  Publications
-                </a>
+    text-decoration: none;
+}
 
-                <a href="#">
-                  Photos &amp; Videos
-                </a>
+.dropdown-group a:last-child {
+    margin-bottom: 0;
+}
 
-              </div>
+.dropdown-group a:hover {
+    color: var(--clp-blue);
+}
 
 
-            </div>
+/* =========================================================
+   25. CURRENT PAGE IN DROPDOWN
+========================================================= */
 
-          </div>
+.dropdown-group a.current-page {
+    color: var(--clp-blue);
+    font-weight: 600;
+}
 
-        </li>
+.dropdown-group a.current-page::before {
+    content: "";
 
+    position: absolute;
 
-      </ul>
+    left: -13px;
+    top: 2px;
+    bottom: 2px;
 
-    </nav>
+    width: 3px;
 
+    background: var(--clp-blue);
+}
 
 
-    <!-- =========================
-         HEADER TOOLS
-    ========================== -->
+/* =========================================================
+   26. MAIN
+========================================================= */
 
-    <div class="clp-header-tools">
+main {
+    width: 100%;
+}
 
 
-      <!-- SEARCH -->
+/* =========================================================
+   27. HERO
+========================================================= */
 
-      <button
-        class="search-button"
-        type="button"
-        aria-label="Search this site"
-      >
+.hero {
+    padding-top: 54px;
+    padding-bottom: 74px;
 
-        <svg
-          width="21"
-          height="21"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.8"
-          aria-hidden="true"
-        >
+    background: #ffffff;
+}
 
-          <circle
-            cx="10.5"
-            cy="10.5"
-            r="6.5"
-          ></circle>
 
-          <line
-            x1="15.5"
-            y1="15.5"
-            x2="21"
-            y2="21"
-          ></line>
+/* =========================================================
+   28. BREADCRUMB
+========================================================= */
 
-        </svg>
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
 
-      </button>
+    gap: 9px;
 
+    margin-bottom: 32px;
 
+    color: #777777;
 
-      <!-- DIVIDER -->
+    font-size: 13px;
+    line-height: 1.5;
+}
 
-      <span
-        class="header-tool-divider"
-        aria-hidden="true"
-      ></span>
+.breadcrumb a {
+    color: #666666;
+}
 
+.breadcrumb a:hover {
+    color: var(--clp-blue);
+}
 
+.breadcrumb span {
+    color: #888888;
+}
 
-      <!-- LANGUAGE -->
 
-      <a
-        class="language-switcher"
-        href="#"
-        lang="zh-Hant"
-      >
-        中文
-      </a>
+/* =========================================================
+   29. HERO TITLE
+========================================================= */
 
+.hero h1 {
+    max-width: 1050px;
 
-    </div>
+    margin:
+        0
+        0
+        24px;
 
+    color: var(--clp-blue);
 
-  </div>
+    font-size: 42px;
+    font-weight: 300;
+    line-height: 1.2;
 
-</header>
+    letter-spacing: -0.4px;
+}
 
 
+/* =========================================================
+   30. HERO INTRODUCTION
+========================================================= */
 
+.hero p {
+    max-width: 930px;
 
+    margin: 0;
 
-<!-- =========================================================
-     MAIN CONTENT
-========================================================= -->
+    color: #404040;
 
-<main id="main">
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.85;
+}
 
 
+/* =========================================================
+   HIGHLIGHTS REMOVED
+========================================================= */
 
-<!-- =========================================================
-     HERO
-========================================================= -->
 
-<section class="hero">
+/* =========================================================
+   31. ANNOUNCEMENTS
+========================================================= */
 
-  <div class="container">
+.documents {
+    padding:
+        70px
+        0
+        78px;
 
+    background: #ffffff;
+}
 
-    <!-- BREADCRUMB -->
+.documents h2 {
+    margin:
+        0
+        0
+        34px;
 
-    <nav
-      class="breadcrumb"
-      aria-label="Breadcrumb"
-    >
+    color: var(--clp-blue);
 
-      <a href="#">
-        Home
-      </a>
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 1.3;
+}
 
-      <span>/</span>
 
-      <a href="#">
-        Investor Relations
-      </a>
+/* =========================================================
+   32. ANNOUNCEMENT LIST
+========================================================= */
 
-      <span>/</span>
+.announcement-list {
+    width: 100%;
 
+    border-top:
+        1px solid
+        var(--border-medium);
+}
 
-      <span>
-        Uncertificated Securities Market
-      </span>
 
-    </nav>
+/* =========================================================
+   33. ANNOUNCEMENT ROW
+========================================================= */
 
+.announcement-row {
+    min-height: 78px;
 
+    display: grid;
 
-    <h1>
-      Uncertificated Securities Market (USM)
-    </h1>
+    grid-template-columns:
+        130px
+        minmax(0, 1fr)
+        180px;
 
+    gap: 30px;
 
+    align-items: center;
 
-    <p>
+    padding:
+        14px
+        0;
 
-      Hong Kong's Uncertificated Securities Market regime
-      takes effect on 16 November 2026.
+    border-bottom:
+        1px solid
+        var(--border-light);
+}
 
-      From that date, shareholders will be able to hold and
-      transfer legal title to shares in their own names
-      electronically, without paper share certificates.
 
-      Existing shareholdings move across in phases over the
-      following five years.
+/* =========================================================
+   34. ANNOUNCEMENT DATE
+========================================================= */
 
-      This page brings together our announcements,
-      shareholder guidance and key dates for the transition.
+.announcement-date {
+    color: #888888;
 
-    </p>
+    font-size: 14px;
+    line-height: 1.5;
 
+    white-space: nowrap;
+}
 
-  </div>
 
-</section>
+/* =========================================================
+   35. ANNOUNCEMENT TITLE
+========================================================= */
 
-  
-<!-- =========================================================
-     ANNOUNCEMENTS
-========================================================= -->
+.announcement-title {
+    color: #333333;
 
-<section class="documents">
+    font-size: 15px;
+    line-height: 1.65;
+}
 
-  <div class="container">
 
+/* =========================================================
+   36. ANNOUNCEMENT DOWNLOAD
+========================================================= */
 
-    <h2>
-      Announcements
-    </h2>
+.announcement-download {
+    color: var(--clp-blue);
 
+    font-size: 14px;
+    line-height: 1.4;
 
+    text-align: right;
 
-    <div class="announcement-list">
+    white-space: nowrap;
+}
 
+.announcement-download:hover {
+    text-decoration: underline;
+}
 
-      <!-- ANNOUNCEMENT 1 -->
 
-      <div class="announcement-row">
+/* =========================================================
+   37. VIDEO SECTION
+========================================================= */
 
-        <div class="announcement-date">
-          dd/mm/yyyy
-        </div>
+.video-section {
+    padding:
+        72px
+        0;
 
-        <div class="announcement-title">
-          USM Participation Information and Transition Plan
-        </div>
+    background: var(--light-grey);
+}
 
-        <a
-          class="announcement-download"
-          href="#"
-        >
-          Download PDF (XXX KB)
-        </a>
 
-      </div>
+/* =========================================================
+   38. VIDEO LAYOUT
+========================================================= */
 
+.video-layout {
+    display: grid;
 
+    grid-template-columns:
+        0.95fr
+        1.05fr;
 
-      <!-- ANNOUNCEMENT 2 -->
+    gap: 58px;
 
-      <div class="announcement-row">
+    align-items: center;
+}
 
-        <div class="announcement-date">
-          dd/mm/yyyy
-        </div>
 
-        <div class="announcement-title">
-          Notice of Implementation of the
-          Uncertificated Securities Market (USM)
-        </div>
+/* =========================================================
+   39. VIDEO PLACEHOLDER
+========================================================= */
 
-        <a
-          class="announcement-download"
-          href="#"
-        >
-          Download PDF (XXX KB)
-        </a>
+.video-placeholder {
+    width: 100%;
 
-      </div>
+    aspect-ratio:
+        16 / 9;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+    background:
+        linear-gradient(
+            135deg,
+            #cccccc,
+            #e3e3e3
+        );
 
-      <!-- ANNOUNCEMENT 3 -->
+    color: #ffffff;
 
-      <div class="announcement-row">
+    font-size: 14px;
+}
 
-        <div class="announcement-date">
-          dd/mm/yyyy
-        </div>
 
-        <div class="announcement-title">
-          Explanatory Statement on the New Articles of Association
-        </div>
+/* =========================================================
+   40. VIDEO CONTENT
+========================================================= */
 
-        <a
-          class="announcement-download"
-          href="#"
-        >
-          Download PDF (XXX KB)
-        </a>
+.video-content h2 {
+    margin:
+        0
+        0
+        21px;
 
-      </div>
+    color: var(--clp-blue);
 
+    font-size: 31px;
+    font-weight: 300;
+    line-height: 1.3;
+}
 
+.video-content p {
+    margin:
+        0
+        0
+        23px;
 
-      <!-- ANNOUNCEMENT 4 -->
+    color: #444444;
 
-      <div class="announcement-row">
+    font-size: 15px;
+    line-height: 1.8;
+}
 
-        <div class="announcement-date">
-          dd/mm/yyyy
-        </div>
+.video-content a {
+    color: var(--clp-blue);
 
-        <div class="announcement-title">
+    font-size: 14px;
+    font-weight: 500;
+}
 
-          Proposed New Articles of Association Subject to
-          Adoption by Shareholders at the 2026 Annual General
-          Meeting (clean version)
+.video-content a:hover {
+    text-decoration: underline;
+}
 
-        </div>
 
-        <a
-          class="announcement-download"
-          href="#"
-        >
-          Download PDF (XXX KB)
-        </a>
+/* =========================================================
+   41. USEFUL LINKS
+========================================================= */
 
-      </div>
+.links {
+    padding:
+        70px
+        0
+        72px;
 
+    background: #ffffff;
+}
 
+.links h2 {
+    margin:
+        0
+        0
+        32px;
 
-      <!-- ANNOUNCEMENT 5 -->
+    color: var(--clp-blue);
 
-      <div class="announcement-row">
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 1.3;
+}
 
-        <div class="announcement-date">
-          dd/mm/yyyy
-        </div>
 
-        <div class="announcement-title">
+/* =========================================================
+   42. LINKS GRID
+========================================================= */
 
-          Proposed New Articles of Association Subject to
-          Adoption by Shareholders at the 2026 Annual General
-          Meeting (marked-up version)
+.link-grid {
+    display: grid;
 
-        </div>
+    grid-template-columns:
+        1fr
+        1fr;
 
-        <a
-          class="announcement-download"
-          href="#"
-        >
-          Download PDF (XXX KB)
-        </a>
+    gap: 80px;
+}
 
-      </div>
 
+/* =========================================================
+   43. USEFUL LINK STYLE
+========================================================= */
 
-    </div>
+.link-grid a {
+    position: relative;
 
+    display: block;
 
-  </div>
+    margin-bottom: 18px;
 
-</section>
+    padding-left: 17px;
 
+    color: var(--clp-blue);
 
+    font-size: 14px;
+    line-height: 1.55;
+}
 
+.link-grid a::before {
+    content: "›";
 
+    position: absolute;
 
-<!-- =========================================================
-     VIDEO
-========================================================= -->
+    left: 0;
+    top: -1px;
 
-<section class="video-section">
+    color: var(--clp-blue);
 
-  <div class="container">
+    font-size: 18px;
+    line-height: 1.2;
+}
 
+.link-grid a:hover {
+    text-decoration: underline;
+}
 
-    <div class="video-layout">
 
+/* =========================================================
+   44. FAQ
+========================================================= */
 
-      <!-- VIDEO PLACEHOLDER -->
+.faq {
+    padding:
+        25px
+        0
+        82px;
 
-      <div class="video-placeholder">
-        Video placeholder 16:9
-      </div>
+    background: #ffffff;
+}
 
 
+/* =========================================================
+   45. FAQ BOX
+========================================================= */
 
-      <!-- VIDEO CONTENT -->
+.faq-box {
+    min-height: 154px;
 
-      <div class="video-content">
+    display: flex;
+    align-items: center;
 
+    gap: 32px;
 
-        <h2>
-          Watch: preparing for the transition
-        </h2>
+    padding:
+        35px
+        40px;
 
+    border:
+        1px solid
+        #e5e5e5;
 
-        <p>
+    background: #ffffff;
+}
 
-          A short walkthrough of what changes on
-          16 November 2026, when your own holding is likely
-          to be converted, and the three things worth doing
-          before then:
 
-          check your registered details, decide how you want
-          to hold your shares, and keep your certificates
-          somewhere safe until they are called in.
+/* =========================================================
+   46. FAQ ACCENT LINE
+========================================================= */
 
-        </p>
+.faq-line {
+    width: 6px;
+    height: 88px;
 
+    flex:
+        0
+        0
+        auto;
 
-        <a href="#">
-          View the full transcript
-        </a>
+    background: var(--clp-cyan);
+}
 
 
-      </div>
+/* =========================================================
+   47. FAQ TITLE
+========================================================= */
 
+.faq-box h2 {
+    margin: 0;
 
-    </div>
+    color: var(--clp-blue);
 
+    font-size: 30px;
+    font-weight: 300;
+    line-height: 1.3;
+}
 
-  </div>
 
-</section>
+/* =========================================================
+   48. FAQ BUTTON
+========================================================= */
 
+.faq-box button {
+    min-width: 140px;
 
+    margin-left: auto;
 
+    padding:
+        12px
+        24px;
 
+    border:
+        1px solid
+        var(--clp-blue);
 
-<!-- =========================================================
-     USEFUL LINKS
-========================================================= -->
+    background: #ffffff;
 
-<section class="links">
+    color: var(--clp-blue);
 
-  <div class="container">
+    font-size: 14px;
+    font-weight: 500;
 
+    cursor: pointer;
 
-    <h2>
-      Useful links
-    </h2>
+    transition:
+        background 0.15s ease,
+        color 0.15s ease;
+}
 
+.faq-box button:hover {
+    background: var(--clp-blue);
 
+    color: #ffffff;
+}
 
-    <div class="link-grid">
 
+/* =========================================================
+   49. ACCESSIBILITY FOCUS
+========================================================= */
 
-      <!-- LEFT COLUMN -->
+a:focus-visible,
+button:focus-visible {
+    outline:
+        2px solid
+        var(--clp-cyan);
 
-      <div>
+    outline-offset: 3px;
+}
 
-        <a href="#">
-          Announcements and circulars
-        </a>
 
-        <a href="#">
-          Articles of Association
-        </a>
-
-        <a href="#">
-          2026 Annual General Meeting
-        </a>
-
-        <a href="#">
-          Dividend history and payment options
-        </a>
-
-        <a href="#">
-          Contact the Share Registrar
-        </a>
-
-      </div>
-
-
-
-      <!-- RIGHT COLUMN -->
-
-      <div>
-
-        <a href="#">
-          SFC — Uncertificated Securities Market
-        </a>
-
-        <a href="#">
-          HKEX — USM information for investors
-        </a>
-
-        <a href="#">
-          Federation of Share Registrars
-        </a>
-
-        <a href="#">
-          List of Approved Securities Registrars
-        </a>
-
-        <a href="#">
-          Glossary of USM terms
-        </a>
-
-      </div>
-
-
-    </div>
-
-
-  </div>
-
-</section>
-
-
-
-
-
-<!-- =========================================================
-     FAQ
-========================================================= -->
-
-<section class="faq">
-
-  <div class="container">
-
-
-    <div class="faq-box">
-
-
-      <div
-        class="faq-line"
-        aria-hidden="true"
-      ></div>
-
-
-
-      <h2>
-        Still have questions about USM?
-      </h2>
-
-
-
-      <button type="button">
-        Read the FAQs
-      </button>
-
-
-    </div>
-
-
-  </div>
-
-</section>
-
-
-
-</main>
-
-
-</body>
-
-</html>
+/* =========================================================
+   END
+   DESKTOP VERSION ONLY
+========================================================= */
