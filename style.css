@@ -661,6 +661,11 @@ main {
     color: #888888;
 }
 
+/* Current page in breadcrumb */
+.breadcrumb span:last-child {
+    color: var(--clp-blue);
+}
+
 
 /* =========================================================
    29. HERO TITLE
