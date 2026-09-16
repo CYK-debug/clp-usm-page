@@ -663,7 +663,7 @@ main {
 
 /* Current page in breadcrumb */
 .breadcrumb span:last-child {
-    color: var(--clp-blue);
+    color: #0066b3;
 }
 
 
