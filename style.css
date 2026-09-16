@@ -953,22 +953,25 @@ main {
     background: #ffffff;
 }
 
+
+/* =========================================================
+   42. USEFUL LINKS TITLE
+========================================================= */
+
 .links h2 {
-    margin:
-        0
-        0
-        32px;
+    margin: 25px 0;
 
-    color: var(--clp-blue);
+    color: #333333;
 
+    font-family: Roboto, Arial, sans-serif;
     font-size: 32px;
-    font-weight: 300;
-    line-height: 1.3;
+    font-weight: 400;
+    line-height: normal;
 }
 
 
 /* =========================================================
-   42. USEFUL LINKS GRID
+   43. USEFUL LINKS GRID
 ========================================================= */
 
 .link-grid {
@@ -983,7 +986,7 @@ main {
 
 
 /* =========================================================
-   43. USEFUL LINK STYLE
+   44. USEFUL LINK ITEM
 ========================================================= */
 
 .link-grid a {
@@ -993,27 +996,43 @@ main {
 
     margin-bottom: 18px;
 
-    padding-left: 17px;
+    padding-left: 28px;
 
-    color: var(--clp-blue);
+    color: #0033A0;
 
-    font-size: 14px;
-    line-height: 1.55;
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.2;
+
+    text-decoration: none;
 }
 
+
+/* =========================================================
+   45. USEFUL LINK ARROW
+========================================================= */
+
 .link-grid a::before {
-    content: "›";
+    content: "→";
 
     position: absolute;
 
     left: 0;
-    top: -1px;
+    top: 0;
 
-    color: var(--clp-blue);
+    color: #0033A0;
 
-    font-size: 18px;
-    line-height: 1.2;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1;
 }
+
+
+/* =========================================================
+   46. USEFUL LINK HOVER
+========================================================= */
 
 .link-grid a:hover {
     text-decoration: underline;
