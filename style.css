@@ -663,7 +663,8 @@ main {
 
 /* Current page in breadcrumb */
 .breadcrumb span:last-child {
-    color: #0066b3;
+    color: #0066B3;
+    font: 13px Arial, Helvetica, sans-serif;
 }
 
 
